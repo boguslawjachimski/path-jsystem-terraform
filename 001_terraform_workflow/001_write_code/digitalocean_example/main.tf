@@ -1,14 +1,23 @@
-# to plik z naszym kodem
+# Main configuration file for Terraform
 
-resource "digitalocean_project" "student_project" {
-  name        = "${var.projekt_name}_${var.student}"
-  description = "Project for ${var.student}"
-  purpose     = "Test Student Project"
-  environment = "Development"
+# This is directive for local variables
+locals {
+  username_tag = "${substr(var.name, 0, 3)}-${substr(var.surname, 0, 3)}"
+  prefix       = "${var.prefix}-${local.username_tag}-${lower(var.environment)}"
+  environment  = var.environment
 }
 
-resource "digitalocean_vpc" "student_vpc" {
-  name        = "tf-${var.projekt_name}-${var.student}"
-  description = "VPC for ${var.student}"
+# This two resources are for creating project and VPC
+resource "digitalocean_project" "student_projekt" {
+  name        = local.prefix
+  description = "Project for student ${var.name} ${var.surname}"
+  purpose     = "Project for learning Terraform"
+  environment = local.environment
+}
+
+resource "digitalocean_vpc" "student_network" {
+  name        = "${local.prefix}-fra1-net"
   region      = "fra1"
+  description = "VPC for region fra1 for student ${var.name} ${var.surname}"
+  ip_range    = "10.10.0.0/24"
 }

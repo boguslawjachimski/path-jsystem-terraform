@@ -248,20 +248,20 @@ module "autoscaling_from_registry" {
 # Module Teask 03 C - module from git
 
 module "autoscaling_from_github" {
-  source  = "github.com/terraform-aws-modules/terraform-aws-autoscaling"
+  source = "github.com/terraform-aws-modules/terraform-aws-autoscaling"
 
   name = "demo_module_asg"
 
   vpc_zone_identifier = [aws_subnet.private_subnet.id]
-  min_size = 0
-  max_size = 1
-  desired_capacity = 1
+  min_size            = 0
+  max_size            = 1
+  desired_capacity    = 1
 
-  image_id = data.aws_ami.ubuntu.id
+  image_id      = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
 
   tags = {
-    Name = "Web servers from asg module"
+    Name      = "Web servers from asg module"
     Terraform = "true"
   }
 }

@@ -37,22 +37,22 @@ resource "aws_subnet" "private_subnet" {
 # TASK 2 HERE
 
 resource "aws_security_group" "public_sg" {
-  name = "Public Security Group"
+  name        = "Public Security Group"
   description = "Public internet access"
-  vpc_id = aws_vpc.vpc.id
+  vpc_id      = aws_vpc.vpc.id
 
   tags = {
-    Name        = "Security Group for Public Subnet"
+    Name     = "Security Group for Public Subnet"
     Teraform = "true"
   }
 }
 
 # rule for allowing all outgoing traffic
 resource "aws_security_group_rule" "public_out" {
-  type = "egress"
-  from_port = 0
-  to_port = 0
-  protocol = "-1"
+  type        = "egress"
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
   cidr_blocks = ["0.0.0.0/0"]
 
   security_group_id = aws_security_group.public_sg.id
@@ -61,10 +61,10 @@ resource "aws_security_group_rule" "public_out" {
 
 # rule for allowing ssh traffic for public sg
 resource "aws_security_group_rule" "public_ssh_in" {
-  type = "ingress"
-  from_port = 22
-  to_port = 22
-  protocol = "tcp"
+  type        = "ingress"
+  from_port   = 22
+  to_port     = 22
+  protocol    = "tcp"
   cidr_blocks = ["0.0.0.0/0"]
 
   security_group_id = aws_security_group.public_sg.id
@@ -72,10 +72,10 @@ resource "aws_security_group_rule" "public_ssh_in" {
 
 # rule for allowing http traffic for public sg
 resource "aws_security_group_rule" "public_http_in" {
-  type = "ingress"
-  from_port = 80
-  to_port = 80
-  protocol = "tcp"
+  type        = "ingress"
+  from_port   = 80
+  to_port     = 80
+  protocol    = "tcp"
   cidr_blocks = ["0.0.0.0/0"]
 
   security_group_id = aws_security_group.public_sg.id
@@ -83,10 +83,10 @@ resource "aws_security_group_rule" "public_http_in" {
 
 # rule for allowing https traffic for public sg
 resource "aws_security_group_rule" "public_https_in" {
-  type = "ingress"
-  from_port = 443
-  to_port = 443
-  protocol = "tcp"
+  type        = "ingress"
+  from_port   = 443
+  to_port     = 443
+  protocol    = "tcp"
   cidr_blocks = ["0.0.0.0/0"]
 
   security_group_id = aws_security_group.public_sg.id
@@ -129,7 +129,7 @@ resource "aws_internet_gateway" "internet_gateway" {
   vpc_id = aws_vpc.vpc.id
 
   tags = {
-    Name = "demo_igw"
+    Name      = "demo_igw"
     Terraform = "true"
   }
 }
@@ -153,7 +153,7 @@ resource "aws_nat_gateway" "nat_gateway" {
   allocation_id = aws_eip.nat_gateway_eip.id
   subnet_id     = aws_subnet.public_subnet.id
   tags = {
-    Name = "demo_nat_gateway"
+    Name      = "demo_nat_gateway"
     Terraform = "true"
   }
 }
@@ -183,7 +183,7 @@ resource "aws_route_table" "private_route_table" {
   vpc_id = aws_vpc.vpc.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.nat_gateway.id
   }
   tags = {

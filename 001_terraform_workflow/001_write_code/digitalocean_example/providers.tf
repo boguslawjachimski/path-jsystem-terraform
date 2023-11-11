@@ -1,5 +1,4 @@
-# ten plik tworzymy jako drugi, w tym przypadku mamy tylko jeden provider
-
+# This file is used to define the providers that will be used in the Terraform configuration.
 provider "digitalocean" {
   alias = "do"
   token = var.do_token
