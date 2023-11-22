@@ -5,7 +5,7 @@ resource "digitalocean_project" "student_projekt" {
   name        = "stf-pio-kos-development"
   description = "Project for student Piotr Koska"
   purpose     = "Project for learning Terraform"
-  environment = "Developlent"
+  environment = "development"
 }
 
 resource "digitalocean_vpc" "student_network" {
