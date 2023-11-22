@@ -13,9 +13,9 @@ resource "aws_vpc" "example_vpc1" {
 # Tworzenie podsieci w VPC
 resource "aws_subnet" "example_subnet1" {
   provider = aws.eu-west-1
-  vpc_id            = aws_vpc.example_vpc.id
+  vpc_id            = aws_vpc.example_vpc1.id
   cidr_block        = "10.0.1.0/24"
-  availability_zone = "eu-central-1a"
+  availability_zone = "eu-west-1a"
 
   tags = {
     Name = "example-subnet"
@@ -27,7 +27,7 @@ resource "aws_security_group" "ssh_security_group1" {
   provider = aws.eu-west-1
   name        = "ssh_access"
   description = "Allow SSH inbound traffic"
-  vpc_id      = aws_vpc.example_vpc.id
+  vpc_id      = aws_vpc.example_vpc1.id
 
   ingress {
     from_port   = 22
@@ -47,7 +47,7 @@ resource "aws_security_group" "ssh_security_group1" {
 # Tworzenie bramy internetowej
 resource "aws_internet_gateway" "example_igw1" {
   provider = aws.eu-west-1
-  vpc_id = aws_vpc.example_vpc.id
+  vpc_id = aws_vpc.example_vpc1.id
 
   tags = {
     Name = "example-igw"
@@ -57,11 +57,11 @@ resource "aws_internet_gateway" "example_igw1" {
 # Tworzenie trasy dla ruchu internetowego
 resource "aws_route_table" "example_route_table1" {
   provider = aws.eu-west-1
-  vpc_id = aws_vpc.example_vpc.id
+  vpc_id = aws_vpc.example_vpc1.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.example_igw.id
+    gateway_id = aws_internet_gateway.example_igw1.id
   }
 
   tags = {
@@ -72,17 +72,17 @@ resource "aws_route_table" "example_route_table1" {
 # Przypisanie trasy do podsieci
 resource "aws_route_table_association" "example_rta1" {
   provider = aws.eu-west-1
-  subnet_id      = aws_subnet.example_subnet.id
-  route_table_id = aws_route_table.example_route_table.id
+  subnet_id      = aws_subnet.example_subnet1.id
+  route_table_id = aws_route_table.example_route_table1.id
 }
 
 # Definicja instancji EC2
 resource "aws_instance" "example_instance1" {
   provider = aws.eu-west-1
-  ami             = "ami-0669b163befffbdfc" # Przykładowy AMI, należy zaktualizować
+  ami             = "ami-07355fe79b493752d" # Przykładowy AMI, należy zaktualizować
   instance_type   = "t2.micro"
-  subnet_id       = aws_subnet.example_subnet.id
-  vpc_security_group_ids = [aws_security_group.ssh_security_group.id]
+  subnet_id       = aws_subnet.example_subnet1.id
+  vpc_security_group_ids = [aws_security_group.ssh_security_group1.id]
 
   tags = {
     Name = "example-instance"
