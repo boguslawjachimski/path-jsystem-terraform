@@ -14,3 +14,12 @@ resource "digitalocean_vpc" "student_network" {
   description = "VPC for region fra1 for student Piotr Koska"
   ip_range    = "10.10.113.0/24"
 }
+
+# VM configuration
+resource "digitalocean_droplet" "student_droplet" {
+  name = "stf-pio-kos-development-fra1-droplet"
+  region = "fra1"
+  size = "s-1vcpu-1gb"
+  image = "ubuntu-20-04-x64"
+  tags = ["stf","piotr_koska"]
+}
