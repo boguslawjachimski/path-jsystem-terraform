@@ -1,0 +1,13 @@
+#cloud-config
+
+packages:
+  - nginx
+
+apt_update: true
+
+package_update: true
+package_upgrade: true
+
+runcmd:
+  - apt-get install -y nginx
+  - cp -f /tmp/index.html /var/www/html/index.html
