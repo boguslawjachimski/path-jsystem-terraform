@@ -1,32 +1,33 @@
-# Main configuration file for Terraform
+locals {
+  acronym = "${lower(substr(var.user_name, 0, 3))}-${lower(substr(var.user_surname, 0, 3))}"
+  name = "${var.sufix}-${substr(var.user_name, 0, 3)}-${substr(var.user_surname, 0, 3)}-${var.environment}"
+}
 
-# This two resources are for creating project and VPC
 resource "digitalocean_project" "student_projekt" {
-  name        = "stf-pio-kos-development-xxx"
-  description = "Project for student Piotr Koska"
+  name        = "${local.name}"
+  description = "Project for student ${var.user_name} ${var.user_surname}"
   purpose     = "Project for learning Terraform"
-  environment = "development"
+  environment = "${var.environment}"
 }
 
 resource "digitalocean_vpc" "student_network" {
-  name        = "stf-pio-kos-development-fra1-net"
-  region      = "fra1"
+  name        = "${local.name}-vpc"
+  region      = "${var.region}"
   description = "VPC for region fra1 for student Piotr Koska"
-  ip_range    = "10.10.113.0/24"
+  ip_range    = "10.100.113.0/24"
 }
 
 # VM configuration
 resource "digitalocean_droplet" "student_droplet" {
-  count = 2
-  name = "stf-pio-kos-development-fra1-droplet-${count.index}"
-  region = "fra1"
+  name = "${local.name}"
+  region = "${var.region}"
   size = "s-2vcpu-2gb"
   image = "ubuntu-22-04-x64"
   vpc_uuid = digitalocean_vpc.student_network.id
   tags = ["stf","piotr_koska"]
   ssh_keys = [digitalocean_ssh_key.default.id]
   user_data = file("./_files/nginx.yaml")
-
+  
   timeouts {
     create = "200s"
     update = "200s"
@@ -56,4 +57,8 @@ resource "digitalocean_droplet" "student_droplet" {
     command = "rm -f ./${self.name}.txt"
     on_failure = continue
   }
+}
+
+data "digitalocean_droplet" "student_droplet" {
+  id = digitalocean_droplet.student_droplet.id
 }
