@@ -1,6 +1,4 @@
-# Main configuration file for Terraform
-
-# This two resources are for creating project and VPC
+# Project
 resource "digitalocean_project" "student_projekt" {
   name        = "stf-pio-kos-development"
   description = "Project for student Piotr Koska"
@@ -8,6 +6,7 @@ resource "digitalocean_project" "student_projekt" {
   environment = "development"
 }
 
+# VPC
 resource "digitalocean_vpc" "student_network" {
   name        = "stf-pio-kos-development-fra1-net"
   region      = "fra1"
@@ -15,7 +14,7 @@ resource "digitalocean_vpc" "student_network" {
   ip_range    = "10.10.113.0/24"
 }
 
-# VM configuration
+# Maszyna wirtualna
 resource "digitalocean_droplet" "student_droplet" {
   name = "stf-pio-kos-development-fra1-droplet"
   region = "fra1"
@@ -23,9 +22,10 @@ resource "digitalocean_droplet" "student_droplet" {
   image = "ubuntu-20-04-x64"
   tags = ["stf","piotr_koska"]
 
+  # blok z timeouts
   timeouts {
-    create = "50s"
-    update = "100s"
-    delete = "30s"
+    create = "50s" # 50 sekund dla create
+    update = "100s" # 100 sekund dla update
+    delete = "30s" # 30 sekund dla delete
   }
 }
