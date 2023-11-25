@@ -1,8 +1,24 @@
+# Validate code
 Do walidacji kodu używamy komendy:
-```terraform validate```
+```bash
+terraform validate
+```
 
 Mozna też użyć komendy:
-```terraform fmt -check```
+```bash
+terraform fmt -check
+```
 
 Oraz komendy:
-```terraform plan```
+```bash
+terraform plan
+```
+
+Możemy tez wygenerowac schemat blokowy za pomocą komendy:
+```bash
+terraform graph
+```
+lub
+```bash
+terraform graph -type=plan | dot -Tpng > graph.png
+```
