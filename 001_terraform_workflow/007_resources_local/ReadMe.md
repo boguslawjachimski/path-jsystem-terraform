@@ -6,3 +6,5 @@ Na przykład istnieją typy zasobów dostępne wyłącznie lokalnie, które słu
 
 Zachowanie zasobów dostępnych wyłącznie lokalnie jest takie samo jak wszystkich innych zasobów, ale dane dotyczące ich wyników istnieją tylko w stanie Terraform. „Zniszczenie” takiego zasobu oznacza jedynie usunięcie go ze stanu, usunięcie jego danych.
 
+## Plan infrastruktury:
+![PNG GRAPH](/001_terraform_workflow/007_resources_local/digitalocean_example/graph.png "Przykład graficzny konfiguracji")

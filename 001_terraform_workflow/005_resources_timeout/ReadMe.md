@@ -9,3 +9,7 @@ Do poprzedniego zasobu dodaj prosze parametr `timeouts` z wartością `create = 
     - tags = "stf, `<imie_nazwisko>`"
 
 - A wiec dodajmy nasz timeouts
+
+
+## Plan infrastruktury:
+![PNG GRAPH](/001_terraform_workflow/005_resources_timeout/digitalocean_example/graph.png "Przykład graficzny konfiguracji")

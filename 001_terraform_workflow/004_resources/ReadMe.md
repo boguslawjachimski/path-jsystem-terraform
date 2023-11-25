@@ -7,3 +7,6 @@ Choc juz pracowalismy z zasobami to w ramach tej lekcji omwimy sobie jak mozemy 
     - region = "fra1"
     - size = "s-1vcpu-1gb"
     - tags = "stf, `<imie_nazwisko>`"
+
+## Plan infrastruktury:
+![PNG GRAPH](/001_terraform_workflow/004_resources/digitalocean_example/graph.png "Przykład graficzny konfiguracji")

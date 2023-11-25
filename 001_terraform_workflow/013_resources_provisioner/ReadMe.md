@@ -21,3 +21,6 @@ Domyślnie dostawcy, którzy zawiodą, spowodują również awarię samego Terra
 1. local-exec
 2. remote-exec
 3. file
+
+## Plan infrastruktury:
+![PNG GRAPH](/001_terraform_workflow/013_resources_provisioner/digitalocean_example/graph.png "Przykład graficzny konfiguracji")

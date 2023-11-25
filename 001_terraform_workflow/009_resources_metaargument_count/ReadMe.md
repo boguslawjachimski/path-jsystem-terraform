@@ -6,3 +6,6 @@ Jeśli blok zasobu lub modułu zawiera count argument, którego wartość jest l
 
 ## Zadanie 1: Metaargument count
 Dodaj prosze parametr `count` do zasobu `digitalocean_droplet` i jako wartość podaj `2`.
+
+## Plan infrastruktury:
+![PNG GRAPH](/001_terraform_workflow/009_resources_metaargument_count/digitalocean_example/graph.png "Przykład graficzny konfiguracji")

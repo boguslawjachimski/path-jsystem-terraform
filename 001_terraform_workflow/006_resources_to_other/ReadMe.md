@@ -11,3 +11,6 @@ Aby zapoznać się z listą atrybutów udostępnianych przez typ zasobu lub źr�
 ## Zadanie 1: Dostęp do atrybutów zasobów
 Naszym zadaniem bedzie wykorzystanie atrybutów zasobów do konfiguracji innych zasobów.
 W naszej konfiguracji mamy zasób `digitalocean_vpc` który tworzy nam prywatną sieć w naszym środowisku. Odwołajmy sie do tej sieci i wykorzystajmy jej atrybuty do konfiguracji zasobu `digitalocean_droplet` który tworzy nam maszynę wirtualną.
+
+## Plan infrastruktury:
+![PNG GRAPH](/001_terraform_workflow/006_resources_to_other/digitalocean_example/graph.png "Przykład graficzny konfiguracji")
