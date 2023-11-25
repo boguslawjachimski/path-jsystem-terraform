@@ -4,13 +4,15 @@
       "name": "pio-kos",
       "region": "fra1",
       "image": "ubuntu-20-04-x64",
-      "size": "s-1vcpu-1gb"
+      "size": "s-1vcpu-1gb",
+      "provider": "digitalocean.do"
     },
     "vm2": {
       "id": "vm2",
       "name": "pio-kos",
       "region": "fra1",
       "image": "ubuntu-20-04-x64",
-      "size": "s-1vcpu-1gb"
+      "size": "s-1vcpu-1gb",
+      "provider": "digitalocean"
     }
 }
