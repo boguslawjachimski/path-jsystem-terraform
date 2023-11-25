@@ -1,2 +1,2 @@
-# Variables
+# Variables from .tfvars plików
 

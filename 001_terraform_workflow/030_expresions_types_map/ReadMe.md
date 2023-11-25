@@ -1,2 +1,2 @@
-# Variables
+# Expresion Types Map
 

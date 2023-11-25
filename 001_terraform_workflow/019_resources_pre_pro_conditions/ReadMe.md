@@ -1,2 +1,2 @@
-# Variables
+# Resources pre pro conditions
 

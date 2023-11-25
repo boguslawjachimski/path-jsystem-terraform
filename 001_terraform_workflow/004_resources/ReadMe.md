@@ -1,3 +1,4 @@
+# Resources (Zasoby)
 Choc juz pracowalismy z zasobami to w ramach tej lekcji omwimy sobie jak mozemy pracowac z zasaobami oraz jakie akcje oraz dodatkowe argumenty one posiadają.
 
 - w tym zadaniu dodamy naszą maszyne wirtualną do naszego kodu terraform

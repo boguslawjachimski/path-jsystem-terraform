@@ -1,3 +1,4 @@
+# Resources timeout
 Do poprzedniego zasobu dodaj prosze parametr `timeouts` z wartością `create = "Xs"`.
 
 - w tym zadaniu dodamy naszą maszyne wirtualną do naszego kodu terraform
