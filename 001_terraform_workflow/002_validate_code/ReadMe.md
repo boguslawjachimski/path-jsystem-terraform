@@ -21,4 +21,5 @@ terraform graph
 lub
 ```bash
 terraform graph -type=plan | dot -Tpng > graph.png
+terraform plan -out=plan && terraform show -json plan > plan.tfgraph
 ```
