@@ -1,9 +1,12 @@
-# This file is used to define the providers that will be used in the Terraform configuration.
+# Wszelkie konfiguracje dostawców powinny być zapisane w pliku providers.tf
+
+# Provider alias
 provider "digitalocean" {
   alias = "do"
   token = var.do_token
 }
 
+# Provider default
 provider "digitalocean" {
   token = var.do_token
 }

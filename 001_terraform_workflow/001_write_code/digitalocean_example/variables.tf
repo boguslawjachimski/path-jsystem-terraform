@@ -1,7 +1,6 @@
-# This is the variables.tf file
-# This file is used to define the variables that will be used in the Terraform configuration.
+# Plik z zmiennymi zazwyczaj zawiera on wszystkie zmienne w ramach danego projektu / środowiska / modułu.
 
-# For coection to DigitalOcean API
+# Zmienna "do_token" jest wymagana do połączenia się z DigitalOcean API.
 variable "do_token" {
   description = "DigitalOcean API token"
   type        = string

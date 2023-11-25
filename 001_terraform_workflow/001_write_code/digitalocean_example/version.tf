@@ -1,3 +1,4 @@
+# Deklaracja używanej wersji terraforma oraz dostawcy digitalocean
 terraform {
   required_providers {
     digitalocean = {
