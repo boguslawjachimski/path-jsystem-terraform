@@ -11,7 +11,7 @@ resource "digitalocean_vpc" "student_network" {
   name        = "stf-pio-kos-development-fra1-net"
   region      = "fra1"
   description = "VPC for region fra1 for student Piotr Koska"
-  ip_range    = "10.10.113.0/24"
+  ip_range    = "10.113.113.0/24"
 }
 
 # Maszyna wirtualna
