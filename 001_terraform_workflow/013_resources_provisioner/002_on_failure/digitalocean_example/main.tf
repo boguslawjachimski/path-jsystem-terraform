@@ -1,6 +1,4 @@
-# Main configuration file for Terraform
-
-# This two resources are for creating project and VPC
+# Projekt
 resource "digitalocean_project" "student_projekt" {
   name        = "stf-pio-kos-development-xxx"
   description = "Project for student Piotr Koska"
@@ -8,6 +6,7 @@ resource "digitalocean_project" "student_projekt" {
   environment = "development"
 }
 
+# VPC
 resource "digitalocean_vpc" "student_network" {
   name        = "stf-pio-kos-development-fra1-net"
   region      = "fra1"
@@ -24,7 +23,7 @@ resource "digitalocean_droplet" "student_droplet" {
   image = "ubuntu-22-04-x64"
   vpc_uuid = digitalocean_vpc.student_network.id
   tags = ["stf","piotr_koska"]
-  ssh_keys = [digitalocean_ssh_key.default.id]
+  ssh_keys = [digitalocean_ssh_key.student_ssh_key.id]
 
   timeouts {
     create = "200s"
@@ -40,7 +39,7 @@ resource "digitalocean_droplet" "student_droplet" {
 
   provisioner "local-exec" {
     command = "exit 2"
-    on_failure = fail
+    on_failure = continue
   }
 
   provisioner "local-exec" {
@@ -49,4 +48,3 @@ resource "digitalocean_droplet" "student_droplet" {
     on_failure = continue
   }
 }
-

@@ -24,7 +24,7 @@ resource "digitalocean_droplet" "student_droplet" {
   image = "ubuntu-22-04-x64"
   vpc_uuid = digitalocean_vpc.student_network.id
   tags = ["stf","piotr_koska"]
-  ssh_keys = [digitalocean_ssh_key.default.id]
+  ssh_keys = [digitalocean_ssh_key.student_ssh_key.id]
 
   timeouts {
     create = "200s"
@@ -43,4 +43,3 @@ resource "digitalocean_droplet" "student_droplet" {
     command = "rm -f ./${self.name}.txt"
   }
 }
-
