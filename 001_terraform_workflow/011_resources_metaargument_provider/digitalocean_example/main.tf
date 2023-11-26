@@ -6,6 +6,7 @@ resource "digitalocean_project" "student_projekt" {
   description = "Project for student Piotr Koska"
   purpose     = "Project for learning Terraform"
   environment = "development"
+  resources = [ digitalocean_droplet.student_droplet["vm1"].urn, digitalocean_droplet.student_droplet["vm2"].urn]
 }
 
 # VPC
@@ -13,7 +14,7 @@ resource "digitalocean_vpc" "student_network" {
   name        = "stf-pio-kos-development-fra1-net"
   region      = "fra1"
   description = "VPC for region fra1 for student Piotr Koska"
-  ip_range    = "10.10.113.0/24"
+  ip_range    = "10.113.113.0/24"
 }
 
 # Maszyna wirtualna
@@ -34,8 +35,6 @@ resource "digitalocean_droplet" "student_droplet" {
     update = "100s"
     delete = "100s"
   }
-
-  depends_on = [ digitalocean_vpc.student_network ]
 }
 
 resource "digitalocean_droplet" "student_droplet_other_provider" {
@@ -56,6 +55,4 @@ resource "digitalocean_droplet" "student_droplet_other_provider" {
     update = "100s"
     delete = "100s"
   }
-
-  depends_on = [ digitalocean_vpc.student_network ]
 }

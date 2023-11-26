@@ -4,6 +4,7 @@ resource "digitalocean_project" "student_projekt" {
   description = "Project for student ${var.user_name} ${var.user_surname}"
   purpose     = "Project for learning Terraform"
   environment = "${var.environment}"
+  resources = flatten(digitalocean_droplet.student_droplet.*.urn) #flatten
 }
 
 # VPC
@@ -38,8 +39,6 @@ resource "digitalocean_droplet" "student_droplet" {
     update = "200s"
     delete = "200s"
   }
-
-  depends_on = [ digitalocean_vpc.student_network ]
 
   provisioner "local-exec" {
     command = "echo ${self.ipv4_address} > ./${self.name}.txt"

@@ -4,6 +4,8 @@ resource "digitalocean_project" "student_projekt" {
   description = "Project for student Piotr Koska"
   purpose     = "Project for learning Terraform"
   environment = "development"
+  #resources = flatten(digitalocean_droplet.student_droplet.*.urn) nie zadziała bo nie lista tylko mapa
+  resources = [for vm in digitalocean_droplet.student_droplet : vm.urn] # trzeba w ten sposób lub recznie wpisac każdy element
 }
 
 # VPC
@@ -20,7 +22,7 @@ resource "digitalocean_droplet" "student_droplet" {
   for_each = jsondecode(file("./_files/vms.json"))
 
   name   = "${each.value.name}-${each.key}"
-  region = each.value.region
+  region = each.value.region # w json specjalnie zly region dla jednej maszyny
   image  = each.value.image
   size   = each.value.size
   vpc_uuid = digitalocean_vpc.student_network.id

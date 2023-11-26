@@ -4,6 +4,7 @@ resource "digitalocean_project" "student_projekt" {
   description = "Project for student Piotr Koska"
   purpose     = "Project for learning Terraform"
   environment = "development"
+  resources = flatten(digitalocean_droplet.student_droplet.*.urn) #flatten
 }
 
 # VPC

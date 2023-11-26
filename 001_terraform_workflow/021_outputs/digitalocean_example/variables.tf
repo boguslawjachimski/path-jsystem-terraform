@@ -25,7 +25,7 @@ variable "user_name" {
   description = "User name"
   type        = string
   default = "Piotr"
-  sensitive = false
+  sensitive = true
 
   validation {
     condition     = length(var.user_name) > 2 && lower(var.user_name) != "piotr"

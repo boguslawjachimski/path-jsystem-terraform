@@ -62,15 +62,3 @@ variable "region" {
   type        = string
   default     = "fra1"
 }
-
-variable "droplet_count" {
-  description = "Number of droplets"
-  type        = number
-  default     = 1
-
-  validation {
-    condition     = var.droplet_count > 0 && var.droplet_count < 10
-    error_message = "Droplet count must be between 1 and 10"
-  }
-  
-}

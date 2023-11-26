@@ -1,6 +1,6 @@
 # Projekt
 resource "digitalocean_project" "student_projekt" {
-  name        = "stf-pio-kos-development-xxx"
+  name        = "stf-pio-kos-development" # zmienimy nazwe
   description = "Project for student Piotr Koska"
   purpose     = "Project for learning Terraform"
   environment = "development"
@@ -20,9 +20,9 @@ resource "digitalocean_droplet" "student_droplet" {
   name = "stf-pio-kos-development-fra1-droplet-${count.index}"
   region = "fra1"
   size = "s-2vcpu-2gb"
-  image = "ubuntu-20-04-x64"
+  image = "ubuntu-20-04-x64" # maipulujemy tym parametrem w celu podmiany zasobu
   vpc_uuid = digitalocean_vpc.student_network.id
-  tags = ["stf","piotr_koska"]
+  tags = ["stf","piotr_koska"] # dodamy tag po stronie GUI
   ssh_keys = [digitalocean_ssh_key.student_ssh_key.id]
 
   timeouts {
@@ -30,8 +30,6 @@ resource "digitalocean_droplet" "student_droplet" {
     update = "200s"
     delete = "200s"
   }
-
-  depends_on = [ digitalocean_vpc.student_network ]
 
   lifecycle {
     create_before_destroy = true
