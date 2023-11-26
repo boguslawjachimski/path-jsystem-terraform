@@ -14,3 +14,7 @@ output "private_key" {
 output "droplet_id" {
   value = "ID MASZYNY WIRTUALNEJ to: ${data.digitalocean_droplet.student_droplet.id} - użyj tego ID w swoim DATA."
 }
+
+output "droplet_all_values" {
+  value = data.digitalocean_droplet.student_droplet
+}

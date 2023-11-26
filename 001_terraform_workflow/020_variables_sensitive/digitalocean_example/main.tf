@@ -1,6 +1,4 @@
-# Main configuration file for Terraform
-
-# This two resources are for creating project and VPC
+# Projekt
 resource "digitalocean_project" "student_projekt" {
   name        = "${var.sufix}-${var.user_name}${var.user_surname}-${var.environment}"
   description = "Project for student ${var.user_name} ${var.user_surname}"
@@ -8,6 +6,7 @@ resource "digitalocean_project" "student_projekt" {
   environment = "${var.environment}"
 }
 
+# VPC
 resource "digitalocean_vpc" "student_network" {
   name        = "${var.sufix}-${var.user_name}${var.user_surname}-${var.environment}-${var.region}-vpc"
   region      = "${var.region}"
@@ -24,12 +23,12 @@ resource "digitalocean_droplet" "student_droplet" {
   image = "ubuntu-22-04-x64"
   vpc_uuid = digitalocean_vpc.student_network.id
   tags = ["stf","piotr_koska"]
-  ssh_keys = [digitalocean_ssh_key.default.id]
+  ssh_keys = [digitalocean_ssh_key.student_ssh_key.id]
   user_data = file("./_files/nginx.yaml")
   
   lifecycle {
     precondition {
-      condition = var.droplet_count >= 2
+      condition = var.droplet_count >= 1
       error_message = "You need to have at least 2 droplets"
     }
   }

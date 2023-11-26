@@ -1,6 +1,3 @@
-# This is the variables.tf file
-# This file is used to define the variables that will be used in the Terraform configuration.
-
 # For coection to DigitalOcean API
 variable "do_token" {
   description = "DigitalOcean API token"
@@ -17,6 +14,7 @@ variable "sufix" {
 variable "user_name" {
   description = "User name"
   type        = string
+  sensitive = true
 }
 
 variable "user_surname" {
@@ -40,4 +38,16 @@ variable "region" {
   description = "Region"
   type        = string
   default     = "fra1"
+}
+
+variable "droplet_count" {
+  description = "Number of droplets"
+  type        = number
+  default     = 1
+
+  validation {
+    condition     = var.droplet_count > 0 && var.droplet_count < 10
+    error_message = "Droplet count must be between 1 and 10"
+  }
+  
 }
