@@ -14,7 +14,7 @@ resource "azurerm_virtual_network" "sft_net" {
 }
 
 # SUBNET
-resource "azurerm_subnet" "internal" {
+resource "azurerm_subnet" "stf_internal" {
   name                 = "internal"
   resource_group_name  = azurerm_resource_group.sft.name # reference to resource group
   virtual_network_name = azurerm_virtual_network.sft_net.name # reference to virtual network
