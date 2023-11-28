@@ -1,0 +1,26 @@
+#cloud-config
+package_upgrade: true
+
+write_files:
+  - path: /etc/systemd/system/docker.service.d/docker.conf
+    content: |
+      [Service]
+        ExecStart=
+        ExecStart=/usr/bin/dockerd
+  - path: /etc/docker/daemon.json
+    content: |
+      {
+        "hosts": ["fd://","tcp://127.0.0.1:2375"]
+      }
+runcmd:
+  - wget -qO- https://repos-droplet.digitalocean.com/install.sh | sudo bash
+  - apt-get update && apt-get install openjdk-17-jre
+  - wget -q -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian/jenkins.io-2023.key
+  - sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+  - apt-get update && apt-get install jenkins -y
+  - curl -sSL https://get.docker.com/ | sh
+  - usermod -aG docker azureuser
+  - usermod -aG docker jenkins
+  - service jenkins restart
+
+

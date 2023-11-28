@@ -2,7 +2,7 @@
 
 # Projekt
 resource "digitalocean_project" "student_projekt" {
-  name        = "stf-pio-kos-development"
+  name        = "stf-pio-kos-developmentx"
   description = "Project for student Piotr Koska"
   purpose     = "Project for learning Terraform"
   environment = "development"
