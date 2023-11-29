@@ -9,5 +9,4 @@ services:
       - ~/apps/postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=terraform
-      - POSTGRES_USER=terraform
       - POSTGRES_DB=terraform
