@@ -4,7 +4,7 @@ Do walidacji kodu używamy komendy:
 terraform validate
 ```
 
-Mozna też użyć komendy:
+Można też użyć komendy:
 ```bash
 terraform fmt -check
 ```
