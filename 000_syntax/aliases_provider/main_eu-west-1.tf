@@ -85,6 +85,6 @@ resource "aws_instance" "example_instance1" {
   vpc_security_group_ids = [aws_security_group.ssh_security_group1.id]
 
   tags = {
-    Name = "example-instance"
+    Name = "example-instance-test"
   }
 }

@@ -1,29 +1,49 @@
-# README #
+# Terraform
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## IaC - Infrastructure as Code
+links:
+- https://developer.hashicorp.com/terraform/tutorials/aws-get-started/infrastructure-as-code
+- https://www.hashicorp.com/blog/infrastructure-as-code-in-a-private-or-public-cloud
+- https://www.hashicorp.com/resources/what-is-infrastructure-as-code
 
-### What is this repository for? ###
+## Instalation
+- https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### Terraform other version
+- https://releases.hashicorp.com/terraform/
 
-### How do I get set up? ###
+1. Create directories to keep the Terraform binaries
+```bash
+$ mkdir -p /usr/local/tf
+$ mkdir -p /usr/local/tf/11
+$ mkdir -p /usr/local/tf/12
+```
+2. Download the binaries for both the versions
+    2.1. Download and extract the binary for Terraform 0.11 in a separate directory:
+```bash
+$ cd /usr/local/tf/11
+$ wget https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
+$ unzip terraform_0.11.14_linux_amd64.zip
+$ rm terraform_0.11.14_linux_amd64.zip
+```
+2.2 Download and extract the binary for Terraform 0.12 in a separate directory:
+```bash
+$ cd /usr/local/tf/12
+$ wget https://releases.hashicorp.com/terraform/0.12.20/terraform_0.12.20_linux_amd64.zip
+$ unzip terraform_0.12.20_linux_amd64.zip
+$ rm terraform_0.12.20_linux_amd64.zip
+```
+2.3 Create symlinks for both the Terraform versions in /usr/bin/ directory:
+```bash
+ln -s /usr/local/tf/11/terraform /usr/bin/terraform11
+ln -s /usr/local/tf/12/terraform /usr/bin/terraform12
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+# Make both the symlinks executable
+chmod ugo+x /usr/bin/terraform*
+```
+3. Calling different versions
+Now, command terraform11 invokes version 0.11 and terraform12 invokes version 0.12
+```bash
+$ terraform11
+$ terraform12
+```
