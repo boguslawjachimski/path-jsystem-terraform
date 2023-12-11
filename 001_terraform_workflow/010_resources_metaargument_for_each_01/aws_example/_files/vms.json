@@ -1,0 +1,14 @@
+{
+    "vm1": {
+      "id": "vm1",
+      "name": "stf-pio-kos-development-instance",
+      "type": "t2.micro",
+      "ami": "ami-0669b163befffbdfc"
+    },
+    "vm2": {
+      "id": "vm2",
+      "name": "stf-pio-kos-development-instance",
+      "type": "t2.micro",
+      "ami": "ami-0669b163befffbdfc"
+    }
+}

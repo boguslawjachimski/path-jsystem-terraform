@@ -14,7 +14,7 @@ resource "digitalocean_vpc" "student_network" {
   description = "VPC for region fra1 for student Piotr Koska"
   ip_range    = "10.113.113.0/24"
 
-  depends_on = [ digitalocean_project.student_projekt ]
+  #depends_on = [ digitalocean_project.student_projekt ]
 }
 
 # Maszyna wirtualna
@@ -34,5 +34,5 @@ resource "digitalocean_droplet" "student_droplet" {
   }
   
   # Dyrektywa depends_on
-  depends_on = [ digitalocean_vpc.student_network ]
+  #depends_on = [ digitalocean_vpc.student_network ]
 }

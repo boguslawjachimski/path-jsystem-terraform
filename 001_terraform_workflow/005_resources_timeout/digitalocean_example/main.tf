@@ -21,6 +21,7 @@ resource "digitalocean_droplet" "student_droplet" {
   size = "s-1vcpu-1gb"
   image = "ubuntu-20-04-x64"
   tags = ["stf","piotr_koska"]
+  ssh_keys = [digitalocean_ssh_key.name.id]
 
   # blok z timeouts
   timeouts {

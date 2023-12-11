@@ -23,6 +23,7 @@ resource "digitalocean_droplet" "student_droplet" {
   image = "ubuntu-20-04-x64"
   vpc_uuid = digitalocean_vpc.student_network.id # Referencja do VPC
   tags = ["stf","piotr_koska"]
+  ssh_keys = [digitalocean_ssh_key.name.id]
 
   timeouts {
     create = "50s"

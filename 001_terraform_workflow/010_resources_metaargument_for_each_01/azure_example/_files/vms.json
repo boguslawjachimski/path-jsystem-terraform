@@ -1,0 +1,18 @@
+{
+    "vm1": {
+      "id": "vm1",
+      "name": "stf-pio-kos-azure",
+      "region": "fra1",
+      "image": "ubuntu-20-04-x64",
+      "size": "Standard_DS1_v2",
+      "tag": "dev"
+    },
+    "vm2": {
+      "id": "vm2",
+      "name": "stf-pio-kos-azure",
+      "region": "nyc1",
+      "image": "ubuntu-20-04-x64",
+      "size": "Standard_DS1_v2",
+      "tag":"dev"
+    }
+}
