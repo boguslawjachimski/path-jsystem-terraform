@@ -25,7 +25,8 @@ resource "azurerm_subnet" "stf_internal" {
 
 # NIC
 resource "azurerm_network_interface" "stf_nic_vm" {
-    name                = "stf-nic-vm"
+    for_each = jsondecode(file("./_files/vms.json"))
+    name                = "stf-nic-vm-${each.key}"
     location            = azurerm_resource_group.sft.location
     resource_group_name = azurerm_resource_group.sft.name
 
@@ -33,13 +34,15 @@ resource "azurerm_network_interface" "stf_nic_vm" {
         name                          = "internal"
         subnet_id                     = azurerm_subnet.stf_internal.id
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = azurerm_public_ip.stf_public_ip.id
+        public_ip_address_id          = azurerm_public_ip.stf_public_ip["${each.key}"].id
     }
 }
 
 # Public IP
 resource "azurerm_public_ip" "stf_public_ip" {
-    name                = "stf-public-ip"
+   for_each = jsondecode(file("./_files/vms.json"))
+
+    name                = "stf-public-ip-${each.key}"
     location            = azurerm_resource_group.sft.location
     resource_group_name = azurerm_resource_group.sft.name
     allocation_method   = "Static"
@@ -52,7 +55,7 @@ resource "azurerm_virtual_machine" "main" {
   name                  = "${each.value.name}-${each.key}"
   location              = azurerm_resource_group.sft.location
   resource_group_name   = azurerm_resource_group.sft.name
-  network_interface_ids = [azurerm_network_interface.stf_nic_vm.id]
+  network_interface_ids = [azurerm_network_interface.stf_nic_vm["${each.key}"].id]
   vm_size               = each.value.size
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM

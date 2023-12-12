@@ -25,7 +25,8 @@ resource "azurerm_subnet" "stf_internal" {
 
 # NIC
 resource "azurerm_network_interface" "stf_nic_vm" {
-    name                = "stf-nic-vm"
+    count = 2
+    name                = "stf-nic-vm-${count.index}"
     location            = azurerm_resource_group.sft.location
     resource_group_name = azurerm_resource_group.sft.name
 
@@ -33,13 +34,14 @@ resource "azurerm_network_interface" "stf_nic_vm" {
         name                          = "internal"
         subnet_id                     = azurerm_subnet.stf_internal.id
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = azurerm_public_ip.stf_public_ip.id
+        public_ip_address_id          = azurerm_public_ip.stf_public_ip[count.index].id
     }
 }
 
 # Public IP
 resource "azurerm_public_ip" "stf_public_ip" {
-    name                = "stf-public-ip"
+    count = 2
+    name                = "stf-public-ip-${count.index}"
     location            = azurerm_resource_group.sft.location
     resource_group_name = azurerm_resource_group.sft.name
     allocation_method   = "Static"
@@ -51,7 +53,7 @@ resource "azurerm_virtual_machine" "main" {
   name                  = "stf-example-vm-${count.index}"
   location              = azurerm_resource_group.sft.location
   resource_group_name   = azurerm_resource_group.sft.name
-  network_interface_ids = [azurerm_network_interface.stf_nic_vm.id]
+  network_interface_ids = [azurerm_network_interface.stf_nic_vm[count.index].id]
   vm_size               = "Standard_DS1_v2"
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM
@@ -67,13 +69,13 @@ resource "azurerm_virtual_machine" "main" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "stf-os-disk1"
+    name              = "stf-os-disk${count.index}"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
   os_profile {
-    computer_name  = "stf-example-vm"
+    computer_name  = "stf-example-vm-${count.index}"
     admin_username = "ubuntu"
   }
   os_profile_linux_config {
