@@ -37,7 +37,7 @@ variable "user_name" {
 variable "user_surname" {
   description = "User surname"
   type        = string
-  default = "Koska"
+  default = "XXXX"
 
   validation {
     condition     = length(var.user_surname) > 2 && lower(var.user_surname) != "koska"
@@ -61,16 +61,4 @@ variable "region" {
   description = "Region"
   type        = string
   default     = "fra1"
-}
-
-variable "droplet_count" {
-  description = "Number of droplets"
-  type        = number
-  default     = 1
-
-  validation {
-    condition     = var.droplet_count > 0 && var.droplet_count < 10
-    error_message = "Droplet count must be between 1 and 10"
-  }
-  
 }

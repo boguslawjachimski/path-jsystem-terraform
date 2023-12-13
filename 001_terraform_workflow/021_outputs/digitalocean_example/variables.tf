@@ -61,3 +61,7 @@ variable "region" {
   type        = string
   default     = "fra1"
 }
+
+variable "network_range" {
+  type = string
+}

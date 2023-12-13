@@ -1,5 +1,5 @@
 output "droplet_ip" {
-  value = digitalocean_droplet.student_droplet.*.ipv4_address
+  value = data.digitalocean_droplet.student_droplet.*.ipv4_address
 }
 
 output "private_key" {

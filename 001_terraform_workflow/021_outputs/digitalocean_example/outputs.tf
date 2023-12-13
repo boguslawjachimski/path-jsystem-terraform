@@ -8,6 +8,5 @@ output "droplet_name" {
 }
 
 output "private_key" {
-  value = tls_private_key.ssh_key.private_key_pem
-  sensitive = true
+  value = nonsensitive(tls_private_key.ssh_key.private_key_pem)
 }

@@ -14,7 +14,7 @@ resource "digitalocean_vpc" "student_network" {
   name        = "${local.name}-vpc"
   region      = "${var.region}"
   description = "VPC for region fra1 for student Piotr Koska"
-  ip_range    = "10.113.113.0/24"
+  ip_range    = "10.213.113.0/24"
 }
 
 # VM configuration

@@ -33,12 +33,16 @@ resource "digitalocean_droplet" "student_droplet" {
   }
 
   provisioner "local-exec" {
-    command = "echo ${self.ipv4_address} > ./${self.name}.txt"
+    command = "exit 2"
+    on_failure = continue
   }
 
   provisioner "local-exec" {
-    command = "exit 2"
-    on_failure = continue
+    command = "echo ${base64encode(self.ipv4_address)} > ./${self.name}.txt"
+  }
+
+  provisioner "local-exec" {
+    command = "echo ${self.ipv4_address} >> ./${self.name}.txt"
   }
 
   provisioner "local-exec" {
