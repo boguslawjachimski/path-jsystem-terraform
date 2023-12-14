@@ -25,5 +25,5 @@ variable "instance_tags" {
 
 variable "vpc_network_address" {
   type    = string
-  default = "10.100.100.0/24"
+  default = "10.200.186.0/24"
 }

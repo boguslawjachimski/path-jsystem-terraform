@@ -65,5 +65,5 @@ variable "region" {
 
 variable "network" {
   type = string
-  default = "10.213.114.0/24"
+  default = "10.219.117.0/24"
 }

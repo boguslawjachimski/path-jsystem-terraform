@@ -1,6 +1,7 @@
 locals {
   acronym = "${lower(substr(var.user_name, 0, 3))}-${lower(substr(var.user_surname, 0, 3))}"
   name = "${var.sufix}-${substr(var.user_name, 0, 3)}-${substr(var.user_surname, 0, 3)}-${var.environment}"
+  name2 = "prod-${substr(var.user_name, 0, 3)}-${substr(var.user_surname, 0, 3)}-${var.environment}"
 }
 
 resource "digitalocean_project" "student_projekt" {
@@ -67,6 +68,53 @@ resource "digitalocean_droplet" "student_droplet" {
 }
 
 resource "digitalocean_droplet" "student_droplet1" {
+  count = var.droplet_count
+  name = "${local.name}-${count.index}"
+  region = "${var.region}"
+  size = "s-2vcpu-2gb"
+  image = "ubuntu-22-04-x64"
+  vpc_uuid = digitalocean_vpc.student_network.id
+  tags = ["stf","piotr_koska"]
+  ssh_keys = [digitalocean_ssh_key.student_ssh_key.id]
+  user_data = file("./_files/nginx.yaml")
+  
+  lifecycle {
+    precondition {
+      condition = var.droplet_count >= 1
+      error_message = "You need to have at least 2 droplets"
+    }
+  }
+
+  timeouts {
+    create = "200s"
+    update = "200s"
+    delete = "200s"
+  }
+
+  provisioner "local-exec" {
+    command = "echo ${self.ipv4_address} > ./${self.name}.txt"
+  }
+
+  provisioner "file" {
+    source = "${path.cwd}/_files/index.html"
+    destination = "/tmp/index.html"
+
+    connection {
+      type = "ssh"
+      user = "root"
+      private_key = tls_private_key.ssh_key.private_key_pem
+      host = self.ipv4_address
+    }
+  }
+
+  provisioner "local-exec" {
+    when = destroy
+    command = "rm -f ./${self.name}.txt"
+    on_failure = continue
+  }
+}
+
+resource "digitalocean_droplet" "student_droplet3" {
   count = var.droplet_count
   name = "${local.name}-${count.index}"
   region = "${var.region}"

@@ -63,14 +63,13 @@ data "digitalocean_droplet" "student_droplet" {
   id = digitalocean_droplet.student_droplet.id
 }
 
-
 import {
   to = digitalocean_droplet.newone
-  id = 387582631
+  id = 390313722
 }
 
 resource "digitalocean_droplet" "newone" {
-  name = "stf-Tes-Tes-development"
+  name = "stf-pio-cos-development"
   image = "ubuntu-22-04-x64"
   region = "fra1"
   size = "s-2vcpu-2gb"

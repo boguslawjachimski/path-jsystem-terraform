@@ -3,5 +3,4 @@ resource "digitalocean_project" "main" {
   description = "Terraform main project"
   purpose     = "test"
   environment = "development"
-  resources   = flatten(module.JenkinsServerInstnce.instances_urn)
 }
