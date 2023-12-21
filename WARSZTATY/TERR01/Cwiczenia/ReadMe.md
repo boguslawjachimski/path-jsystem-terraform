@@ -3,6 +3,9 @@ Pracujemy na wspolnym środwisku - a wiec i siecówka będzie wspolna. Odszukaj 
 
 Zatem sieci dla ciebie będzie 10.`<TWOJ_NUMER>`.0.0/16
 
+## UWAGA
+Instance type uzywamy `s-1vcpu-1gb` a image `ubuntu-22-04-x64`
+
 ## Lista przydzielonych numerow sieci
 
 1. "Paweł Ziółkowski"
