@@ -12,6 +12,7 @@ variable "ssh_key_name" {
 variable "image" {
   description = "value of the image"
   type        = string
+  default = "ubuntu-22-04-x64"
 }
 
 variable "size" {
