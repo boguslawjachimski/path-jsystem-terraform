@@ -22,7 +22,7 @@ module "vpc" {
 
 resource "digitalocean_droplet" "student_droplet" {
   count = 2
-  name = "-${count.index}"
+  name = "${var.vm_name}-${count.index}"
   region = var.region
   size = var.size
   image = var.image
