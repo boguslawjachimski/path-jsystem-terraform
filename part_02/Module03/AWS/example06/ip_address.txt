@@ -1,0 +1,3 @@
+ec2-user EC2-EU-WEST-2 = 18.171.159.76
+ubuntu EC2-EU-WEST-1 = 34.246.200.177
+ubuntu EC2-EU-CENTRAL-1 = 3.75.222.47

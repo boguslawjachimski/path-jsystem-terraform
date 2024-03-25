@@ -1,0 +1,10 @@
+{
+    "azure1-vm" : {
+        "name" : "vm1",
+        "size" : "Standard_D2_v2"
+    },
+    "azure2-vm" : {
+        "name" : "vm2",
+        "size" : "Standard_D2_v2"
+    }
+}

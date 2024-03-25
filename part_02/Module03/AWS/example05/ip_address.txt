@@ -1,0 +1,3 @@
+copy dir EC2-EU-WEST-1 = 34.242.30.94
+copt file EC2-EU-WEST-2 = 35.176.34.185
+content EC2-EU-CENTRAL-1 = 3.125.47.209

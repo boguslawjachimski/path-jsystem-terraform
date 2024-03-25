@@ -1,0 +1,3 @@
+ubuntu default-EC2-EU-WEST-1 = 34.244.58.30
+ec2-user default-EC2-EU-WEST-2 = 3.10.233.103
+ubuntu default-EC2-EU-CENTRAL-1-0 = 54.93.206.112
