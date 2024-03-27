@@ -72,7 +72,7 @@ resource "aws_route_table_association" "example_rta" {
 
 # Definicja instancji EC2
 resource "aws_instance" "example_instance" {
-  count = 2
+  count = 1
   ami             = "ami-0669b163befffbdfc" # Przykładowy AMI, należy zaktualizować
   instance_type   = "t2.micro"
   subnet_id       = aws_subnet.example_subnet.id
@@ -80,7 +80,7 @@ resource "aws_instance" "example_instance" {
   key_name      = aws_key_pair.deployer.key_name
 
   tags = {
-    Name = "example-instance-${count.index}"
+    Name = "example-instance"
   }
 
   # blok z timeouts

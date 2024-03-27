@@ -72,7 +72,8 @@ resource "aws_route_table_association" "example_rta" {
 
 # Definicja instancji EC2
 resource "aws_instance" "example_instance" {
-  ami             = "ami-0669b163befffbdfc" # Przykładowy AMI, należy zaktualizować
+  count = 1
+  ami             = "ami-0183b16fc359a89dd" #"ami-0669b163befffbdfc" # Przykładowy AMI, należy zaktualizować ami-0183b16fc359a89dd
   instance_type   = "t2.micro"
   subnet_id       = aws_subnet.example_subnet.id
   vpc_security_group_ids = [aws_security_group.ssh_security_group.id]
@@ -86,14 +87,27 @@ resource "aws_instance" "example_instance" {
   timeouts {
     create = "50s" # 50 sekund dla create
     update = "100s" # 100 sekund dla update
-    delete = "30s" # 30 sekund dla delete
+    delete = "100s" # 30 sekund dla delete
   }
 
   lifecycle {
-    create_before_destroy = true
-    #prevent_destroy = false
-    #ignore_changes = [ "tags","name" ]
-    #replace_triggered_by = [ digitalocean_project.student_projekt ]
+    #create_before_destroy = true
     #prevent_destroy = true
+    #ignore_changes = [ tags ]
+    replace_triggered_by = [ aws_instance.new_instance ]
+  }
+}
+
+resource "aws_instance" "new_instance" {
+  count = 1
+  ami             = "ami-0669b163befffbdfc" #"ami-0669b163befffbdfc" # Przykładowy AMI, należy zaktualizować ami-0183b16fc359a89dd
+  instance_type   = "t2.micro"
+  subnet_id       = aws_subnet.example_subnet.id
+  vpc_security_group_ids = [aws_security_group.ssh_security_group.id]
+  key_name      = aws_key_pair.deployer.key_name
+
+  tags = {
+    Name = "new-instance"
+    test = "test"
   }
 }

@@ -4,13 +4,15 @@
       "name": "stf-pio-kos-development-fra1-droplet",
       "region": "fra1",
       "image": "ubuntu-20-04-x64",
-      "size": "s-1vcpu-1gb"
+      "size": "s-1vcpu-1gb",
+      "tags": ["stf", "pio", "kos", "development"]
     },
     "vm2": {
       "id": "vm2",
       "name": "stf-pio-kos-development-fra1-droplet",
-      "region": "nyc1",
-      "image": "ubuntu-20-04-x64",
-      "size": "s-1vcpu-1gb"
+      "region": "fra1",
+      "image": "ubuntu-22-04-x64",
+      "size": "s-2vcpu-2gb",
+      "tags": ["stf", "pio", "kos", "development"]
     }
 }

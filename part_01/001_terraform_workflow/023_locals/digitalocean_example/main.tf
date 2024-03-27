@@ -2,13 +2,14 @@ locals {
   acronym = "${lower(substr(var.user_name, 0, 3))}-${lower(substr(var.user_surname, 0, 3))}"
   name = "${var.sufix}-${substr(var.user_name, 0, 3)}-${substr(var.user_surname, 0, 3)}-${var.environment}"
   name2 = "prod-${substr(var.user_name, 0, 3)}-${substr(var.user_surname, 0, 3)}-${var.environment}"
+  env = "${var.environment}"
 }
 
 resource "digitalocean_project" "student_projekt" {
   name        = "${local.name}"
   description = "Project for student ${var.user_name} ${var.user_surname}"
   purpose     = "Project for learning Terraform"
-  environment = "${var.environment}"
+  environment = "${local.env}"
   resources = concat(digitalocean_droplet.student_droplet.*.urn, digitalocean_droplet.student_droplet1.*.urn) #flatten
 }
 

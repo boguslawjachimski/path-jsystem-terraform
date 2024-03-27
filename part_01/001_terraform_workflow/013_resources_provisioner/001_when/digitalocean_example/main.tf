@@ -2,7 +2,7 @@
 
 # This two resources are for creating project and VPC
 resource "digitalocean_project" "student_projekt" {
-  name        = "stf-pioffff-kosffff-development-xxx"
+  name        = "stf-xxxpioffff-kosffff-development-xxx"
   description = "Project for student Piotr Koska"
   purpose     = "Project for learning Terraform"
   environment = "development"
@@ -10,16 +10,16 @@ resource "digitalocean_project" "student_projekt" {
 }
 
 resource "digitalocean_vpc" "student_network" {
-  name        = "stf-pioffff-kosfffff-development-fra1-net"
+  name        = "stf-xxxpioffff-kosfffff-development-fra1-net"
   region      = "fra1"
   description = "VPC for region fra1 for student Piotr Koska"
-  ip_range    = "10.213.113.0/24"
+  ip_range    = "10.115.113.0/24"
 }
 
 # VM configuration
 resource "digitalocean_droplet" "student_droplet" {
   count = 2
-  name = "stf-pio-kos-development-fra1-droplet-${count.index}"
+  name = "stf-xxxpio-kos-development-fra1-droplet-${count.index}"
   region = "fra1"
   size = "s-2vcpu-2gb"
   image = "ubuntu-22-04-x64"

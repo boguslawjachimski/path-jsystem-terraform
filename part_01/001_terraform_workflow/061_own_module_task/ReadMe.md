@@ -2,7 +2,8 @@
 
 Zadanie polega na napisaniu własnego mogułu w terraform.
 Moduł ten bedzie tworzył:
- - X liczbe maszyn wirtualnych.
+ - X liczbe maszyn wirtualnych - jak osobny moduł.
+ - przygotuj też sieci pod te maszyny wirtualne. Siec tworzona pod maszynę wirtualna niech bedzie realizowana przez osobny moduł.
  - Obie maszyny wirtualne bedą miały konfiguracje firewall z podziałem na public i managment.
     - Porty otwarte na public to 80 i 443.
     - Porty z restrykcjami managment dla Twojego IP pdla portu 22.

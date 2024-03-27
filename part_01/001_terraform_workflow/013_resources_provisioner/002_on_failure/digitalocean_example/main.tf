@@ -47,7 +47,7 @@ resource "digitalocean_droplet" "student_droplet" {
 
   provisioner "local-exec" {
     when = destroy
-    command = "rm -f ./${self.name}.txt"
+    command = "cat ./${self.name}.txxt"
     on_failure = continue
   }
 }

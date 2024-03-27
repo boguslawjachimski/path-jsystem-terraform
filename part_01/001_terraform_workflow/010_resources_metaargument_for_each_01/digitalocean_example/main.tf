@@ -13,7 +13,7 @@ resource "digitalocean_vpc" "student_network" {
   name        = "stf-pio-kos-development-fra1-net"
   region      = "fra1"
   description = "VPC for region fra1 for student Piotr Koska"
-  ip_range    = "10.113.113.0/24"
+  ip_range    = "10.115.113.0/24"
 }
 
 # VM configuration
@@ -26,8 +26,9 @@ resource "digitalocean_droplet" "student_droplet" {
   image  = each.value.image
   size   = each.value.size
   vpc_uuid = digitalocean_vpc.student_network.id
-  tags = ["stf","piotr_koska"]
+  tags = each.value.tags
   ssh_keys = [digitalocean_ssh_key.student_ssh_key.id]
+
   
   timeouts {
     create = "100s"
