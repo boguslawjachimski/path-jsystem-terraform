@@ -44,7 +44,7 @@ variable "content" {
 }
 
 resource "local_file" "txt1" {
-  filename = "${path.module}/${terraform.workspace}-file1.txt"
+  filename = "${path.root}/${terraform.workspace}-file1.txt"
   content  = <<EOT
     ${ var.content != "" ? var.content : "NO CONTENT PROVIDED"}
   EOT
@@ -52,6 +52,13 @@ resource "local_file" "txt1" {
 
 resource "local_file" "txt2" {
   filename = "${path.module}/${terraform.workspace}-file2.txt"
+  content  = <<EOT
+    %{ if var.content != "" }${var.content}%{ else }NO CONTENT PROVIDED!%{ endif }
+  EOT
+}
+
+resource "local_file" "txt3" {
+  filename = "${path.cwd}/${terraform.workspace}-file3.txt"
   content  = <<EOT
     %{ if var.content != "" }${var.content}%{ else }NO CONTENT PROVIDED!%{ endif }
   EOT

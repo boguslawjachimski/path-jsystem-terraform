@@ -9,8 +9,6 @@ terraform {
       source  = "hashicorp/aws"
     }
   }
-  backend "pg" {
-  }
   required_version = ">= 1.6.0"
 }
 

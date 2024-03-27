@@ -63,15 +63,12 @@ data "digitalocean_droplet" "student_droplet" {
   id = digitalocean_droplet.student_droplet.id
 }
 
-import {
-  to = digitalocean_droplet.newone
-  id = 390313722
-}
 
-resource "digitalocean_droplet" "newone" {
-  name = "stf-pio-cos-development"
-  image = "ubuntu-22-04-x64"
-  region = "fra1"
-  size = "s-2vcpu-2gb"
-  tags = ["stf","piotr_koska"]
+
+resource "digitalocean_droplet" "imp" {
+  name = "xxxx"
+  image = "xxxx"
+  region = "xxxx"
+  size = "xxxx"
+  #tags = ["stf","piotr_koska"]
 }

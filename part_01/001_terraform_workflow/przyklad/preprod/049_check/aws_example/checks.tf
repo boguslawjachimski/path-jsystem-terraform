@@ -14,15 +14,15 @@ check "name_quality_check_ver2" {
 
 check "latest_lambda_runtime_ver1" {
   assert {
-    condition     = aws_lambda_function.test_lambda.runtime == "python3.8"
+    condition     = aws_lambda_function.test_lambda.runtime == "python3.10"
     error_message = "Please upgrade from ${aws_lambda_function.test_lambda.runtime} to python3.10"
   }
 }
 
 check "latest_lambda_runtime_ver2" {
   assert {
-    condition     = contains(["python3.12", "python3.11"], aws_lambda_function.test_lambda.runtime)
-    error_message = "Please upgrade from ${aws_lambda_function.test_lambda.runtime} to python3.11 or python3.12"
+    condition     = contains(["python3.9", "python3.10"], aws_lambda_function.test_lambda.runtime)
+    error_message = "Please upgrade from ${aws_lambda_function.test_lambda.runtime} to python3.9 or python3.10"
   }
 }
 
