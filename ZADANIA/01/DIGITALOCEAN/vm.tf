@@ -1,7 +1,8 @@
 #<block tyupe> "<provider resoreces block name>" "<our name value - unikatowa w calym kodzie>"
 resource "digitalocean_droplet" "main" { # <- unikatowy adres zasobu.
+    count = 3
     image  = "ubuntu-20-04-x64"
-    name   = "tf-piotrkoska-temp-droplet" # atrybut nazwa maszyny wirtualnej.
+    name   = "tf-piotrkoska-temp-droplet-${count.index+1}" # atrybut nazwa maszyny wirtualnej.
     region = "fra1"
     size   = "s-1vcpu-1gb"
     vpc_uuid = digitalocean_vpc.main.id
@@ -16,7 +17,7 @@ resource "digitalocean_ssh_key" "main" {
 resource "digitalocean_firewall" "main" {
   name = "tf-piotrkoska-temp-firewall"
 
-  droplet_ids = [digitalocean_droplet.main.id] # <- odowałanie do zasobu.
+  droplet_ids = flatten(digitalocean_droplet.main.*.id) # <- odowałanie do zasobu.
 
     inbound_rule {
         protocol           = "tcp"
@@ -39,7 +40,7 @@ resource "digitalocean_firewall" "main" {
 
 resource "digitalocean_project" "main" {
  name = "tf-piotrkoska-temp-project"
- resources = [ digitalocean_droplet.main.urn ]
+ resources = flatten(digitalocean_droplet.main.*.urn)
 }
 
 resource "tls_private_key" "name" {
