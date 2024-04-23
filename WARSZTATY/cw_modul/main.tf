@@ -29,8 +29,3 @@ module "vm" {
   name = each.value.name
 }
 
-module "service-account" {
-  source  = "lacework/service-account/gcp"
-  version = "2.0.2"
-}
-
