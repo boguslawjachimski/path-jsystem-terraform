@@ -6,7 +6,7 @@ resource "digitalocean_droplet" "main" { # <- unikatowy adres zasobu.
     image  = each.value.image
     name   = "${each.value.name}-${each.value.id}" # atrybut nazwa maszyny wirtualnej.
     region = each.value.region
-    size   = each.value.size
+    size   = var.size_vm
     tags = each.value.tags
     vpc_uuid = digitalocean_vpc.main.id
     ssh_keys = [digitalocean_ssh_key.main.id]
@@ -21,12 +21,12 @@ resource "digitalocean_droplet" "main" { # <- unikatowy adres zasobu.
 }
 
 resource "digitalocean_ssh_key" "main" {
-    name       = "tf-piotrkoska-temp-ssh-key" # TU
+    name       = var.name_ssh_key # TU
     public_key = tls_private_key.name.public_key_openssh
 }
 
 resource "digitalocean_firewall" "main" {
-  name = "tf-piotrkoska-temp-firewall" # TU
+  name = var.name_firewall # TU
 
   droplet_ids = [ for vm in digitalocean_droplet.main : vm.id ]# w przypadku cont flatten(digitalocean_droplet.main.*.id) # <- odowałanie do zasobu.
 
@@ -50,12 +50,12 @@ resource "digitalocean_firewall" "main" {
 }
 
 resource "digitalocean_project" "main" {
- name = "tf-piotrkoska-temp-project" # TU
+ name = "${var.name_project}-SUPER" # TU
  resources = [ for vm in digitalocean_droplet.main : vm.urn ] #flatten(digitalocean_droplet.main.*.urn)
 }
 
 resource "tls_private_key" "name" {
-    algorithm = "RSA" # TU
+    algorithm = var.algorithm # TU
     rsa_bits = 4096
 }
 
