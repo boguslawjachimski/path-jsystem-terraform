@@ -6,7 +6,7 @@ resource "digitalocean_droplet" "main" { # <- unikatowy adres zasobu.
     image  = each.value.image
     name   = "${each.value.name}-${each.value.id}" # atrybut nazwa maszyny wirtualnej.
     region = each.value.region
-    size   = var.size_vm
+    size   = contains(local.allowed_instance_types, var.size_vm) ? var.size_vm : "s-1vcpu-1gb"
     tags = each.value.tags
     vpc_uuid = digitalocean_vpc.main.id
     ssh_keys = [digitalocean_ssh_key.main.id]
