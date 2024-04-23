@@ -1,6 +1,6 @@
 # Projekt
 resource "digitalocean_project" "student_projekt" {
-  name        = "stf-pio-kos-development-xxx"
+  name        = "stf-pio1-kos2-development-xxx"
   description = "Project for student Piotr Koska"
   purpose     = "Project for learning Terraform"
   environment = "development"
@@ -9,7 +9,7 @@ resource "digitalocean_project" "student_projekt" {
 
 # VPC
 resource "digitalocean_vpc" "student_network" {
-  name        = "stf-pio-kos-development-fra1-net"
+  name        = "stf-pio2-kos3-development-fra1-net"
   region      = "fra1"
   description = "VPC for region fra1 for student Piotr Koska"
   ip_range    = "10.113.113.0/24"

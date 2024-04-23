@@ -2,7 +2,7 @@
 
 # This two resources are for creating project and VPC
 resource "digitalocean_project" "student_projekt" {
-  name        = "stf-xxxpioffff-kosffff-development-xxx"
+  name        = "stf-pioffff-kos-development-xxx"
   description = "Project for student Piotr Koska"
   purpose     = "Project for learning Terraform"
   environment = "development"
@@ -34,11 +34,12 @@ resource "digitalocean_droplet" "student_droplet" {
   }
 
   provisioner "local-exec" {
-    command = "echo ${self.ipv4_address} > ./${self.name}.txt"
+    command = "echo ${self.ipv4_address} > ./${self.name}.txt; echo ${self.ipv4_address_private} >> ./${self.name}.txt"
   }
 
   provisioner "local-exec" {
     when = destroy
-    command = "rm -f ./${self.name}.txt"
+    command = "rm ./${self.name}-dddd.txt"
+    on_failure = continue
   }
 }
