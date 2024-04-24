@@ -50,6 +50,10 @@ variable "size_vm" {
                         "s-2vcpu-2gb",
                         "s-4vcpu-4gb",
                         "s-2vcpu-4gb"], var.size_vm))
-    error_message = "PIOTR mowi: value of size_vm must start with 's-' example s-2vcpu-2gb"
+    error_message = "The instance type '${var.size_vm}' is not allowed. Please choose from ${join(", ", ["s-1vcpu-1gb",
+                        "s-1vcpu-2gb",
+                        "s-2vcpu-2gb",
+                        "s-4vcpu-4gb",
+                        "s-2vcpu-4gb"])}."
   }
 }
