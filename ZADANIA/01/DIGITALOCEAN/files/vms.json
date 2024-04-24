@@ -1,18 +1,10 @@
 {
     "vm1": {
       "id": "vm1",
-      "name": "stf-pio-kos-development-fra1-droplet",
+      "name": "PIOTRKOSKA-TEST-1",
       "region": "fra1",
       "image": "ubuntu-20-04-x64",
       "size": "s-2vcpu-2gb",
       "tags": ["stf", "pio", "kos", "development", "old"]
-    },
-    "vm2": {
-      "id": "vm2",
-      "name": "stf-pio-kos-development-fra1-droplet",
-      "region": "fra1",
-      "image": "ubuntu-22-04-x64",
-      "size": "s-2vcpu-2gb",
-      "tags": ["stf", "pio", "kos", "development"]
     }
 }
