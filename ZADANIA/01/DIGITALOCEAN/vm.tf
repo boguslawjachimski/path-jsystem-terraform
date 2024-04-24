@@ -41,27 +41,55 @@ resource "digitalocean_ssh_key" "main" {
     public_key = tls_private_key.name.public_key_openssh
 }
 
+locals {
+    xxinbound_rule = [
+        {
+            protocol           = "tcp"
+            port_range         = "22"
+            source_addresses   = ["0.0.0.0/0"]
+        },
+        {
+            protocol           = "tcp"
+            port_range         = "80"
+            source_addresses   = ["0.0.0.0/0"]
+        }
+    ]
+
+    outbound_rule = [
+        {
+            protocol           = "tcp"
+            port_range         = "1-65535"
+            destination_addresses = ["0.0.0.0/0"]
+        },
+        {
+            protocol           = "udp"
+            port_range         = "1-65535"
+            destination_addresses = ["0.0.0.0/0"]
+        }
+    ]
+}
+
 resource "digitalocean_firewall" "main" {
   name = var.name_firewall # TU
 
   droplet_ids = local.droplet_ids # w przypadku cont flatten(digitalocean_droplet.main.*.id) # <- odowałanie do zasobu.
 
-    inbound_rule {
-        protocol           = "tcp"
-        port_range         = "22"
-        source_addresses   = ["0.0.0.0/0"]
+    dynamic "inbound_rule" {
+      for_each = local.xxinbound_rule
+      content {
+        protocol = inbound_rule.value.protocol
+        port_range = inbound_rule.value.port_range
+        source_addresses = inbound_rule.value.source_addresses
+      }
     }
 
-    outbound_rule {
-        protocol           = "tcp"
-        port_range         = "1-65535"
-        destination_addresses = ["0.0.0.0/0"]
-    }
-
-    outbound_rule {
-        protocol           = "udp"
-        port_range         = "1-65535"
-        destination_addresses = ["0.0.0.0/0"]
+    dynamic "outbound_rule" {
+      for_each = local.outbound_rule
+      content {
+        protocol = outbound_rule.value.protocol
+        port_range = outbound_rule.value.port_range
+        destination_addresses = outbound_rule.value.destination_addresses
+      }
     }
 }
 
@@ -89,10 +117,3 @@ resource "local_file" "key" {
 #  value = data.digitalocean_droplet.exeternal.ipv4_address
 #}
 
-resource "digitalocean_droplet" "test34" {
-    count = terraform.workspace == "default" ? 1 : 0 
-    name = "test34"
-    image = "ubuntu-20-04-x64"
-    region = "fra1"
-    size = "s-1vcpu-1gb"
-}

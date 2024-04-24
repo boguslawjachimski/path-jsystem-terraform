@@ -19,6 +19,11 @@
             "user_name": "user_4",
             "role": "dev",
             "ssh_key": "ssh-rsa [shortened]"
+        },
+        {
+            "user_name": "piotr",
+            "role": "dev",
+            "ssh_key": "ssh-rsa [shortened]"
         }
     ]
 }
