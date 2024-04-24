@@ -41,19 +41,19 @@ variable "algorithm" {
 variable "size_vm" {
   description = "size of the VM"
   type = string
-  default = "s-1vcpu-1gb"
+  default = 2+2
 
-  validation {
-    condition = ((length(var.size_vm) > 2 && substr(var.size_vm, 0, 2) == "s-") && 
-                contains(["s-1vcpu-1gb",
-                        "s-1vcpu-2gb",
-                        "s-2vcpu-2gb",
-                        "s-4vcpu-4gb",
-                        "s-2vcpu-4gb"], var.size_vm))
-    error_message = "The instance type '${var.size_vm}' is not allowed. Please choose from ${join(", ", ["s-1vcpu-1gb",
-                        "s-1vcpu-2gb",
-                        "s-2vcpu-2gb",
-                        "s-4vcpu-4gb",
-                        "s-2vcpu-4gb"])}."
-  }
+  #validation {
+  #  condition = ((length(var.size_vm) > 2 && substr(var.size_vm, 0, 2) == "s-") && 
+  #              contains(["s-1vcpu-1gb",
+  #                      "s-1vcpu-2gb",
+  #                      "s-2vcpu-2gb",
+  #                      "s-4vcpu-4gb",
+  #                      "s-2vcpu-4gb"], var.size_vm))
+  #  error_message = "The instance type '${var.size_vm}' is not allowed. Please choose from ${join(", ", ["s-1vcpu-1gb",
+  #                      "s-1vcpu-2gb",
+  #                      "s-2vcpu-2gb",
+  #                      "s-4vcpu-4gb",
+  #                      "s-2vcpu-4gb"])}."
+  #}
 }

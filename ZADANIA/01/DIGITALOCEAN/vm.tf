@@ -18,15 +18,20 @@ resource "digitalocean_droplet" "main" { # <- unikatowy adres zasobu.
     replace_triggered_by = [ local_file.key ]
     #prevent_destroy = true
 
-    precondition {
-      condition = contains(local.allowed_instance_types, var.size_vm)
-      error_message = "The instance type '${var.size_vm}' is not allowed. Please choose from ${join(", ", local.allowed_instance_types)}."
-    }
+    #precondition {
+    #  condition = contains(local.allowed_instance_types, var.size_vm)
+    #  error_message = "The instance type '${var.size_vm}' is not allowed. Please choose from ${join(", ", local.allowed_instance_types)}."
+    #}
 
-    postcondition {
-      condition = contains(local.allowed_instance_types, var.size_vm)
-      error_message = "The instance type '${var.size_vm}' is not allowed. Please choose from ${join(", ", local.allowed_instance_types)}."
-    }
+    #postcondition {
+    #  condition = contains(local.allowed_instance_types, var.size_vm)
+    #  error_message = "The instance type '${var.size_vm}' is not allowed. Please choose from ${join(", ", local.allowed_instance_types)}."
+    #}
+
+    #precondition {
+    #  condition = digitalocean_droplet.main.ipv4_address_private == "10.250.16.1"
+    #  error_message = "The private IP address is not available."
+    #}
 
   }
 }
