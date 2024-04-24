@@ -1,6 +1,7 @@
 variable "do_token" {
   description = "value of DigitalOcean API token"
   type = string
+  sensitive = true
 }
 
 variable "name_ssh_key" {
@@ -30,7 +31,7 @@ variable "algorithm" {
 variable "size_vm" {
   description = "size of the VM"
   type = string
-  default = 2+2
+  default = "s-7vcpu-7gb"
 
   #validation {
   #  condition = ((length(var.size_vm) > 2 && substr(var.size_vm, 0, 2) == "s-") && 

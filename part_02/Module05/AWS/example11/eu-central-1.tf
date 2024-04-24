@@ -15,7 +15,7 @@ resource "aws_instance" "ec2" {
   }
 
   provisioner "local-exec" {
-    command = "echo 'ubuntu ${self.tags["Name"]} = ${self.public_ip}' >> ip_address.txt"
+    command = "echo 'ubuntu ${self.tags["Name"]} = ${self.public_ip}' >> ip_address.txt;sleep 600"
   }
 
    connection {

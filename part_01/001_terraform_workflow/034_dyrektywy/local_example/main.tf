@@ -1,5 +1,5 @@
 resource "local_file" "index" {
-  filename = "${terraform.workspace}-${var.filename}.txt"
+  filename = "${var.filename}.txt"
   content  = "foo!"
 }
 
@@ -25,7 +25,7 @@ variable "complex_facts" {
 }
 
 resource "local_file" "index_html" {
-  filename = "${path.module}/${var.filename}"
+  filename = "${path.module}/${terraform.workspace}-${var.filename}"
   content  = <<EOT
 <html>
     %{for fact in var.facts}
@@ -44,21 +44,21 @@ variable "content" {
 }
 
 resource "local_file" "txt1" {
-  filename = "${path.root}/${terraform.workspace}-file1.txt"
+  filename = "${path.root}/file1.txt"
   content  = <<EOT
     ${ var.content != "" ? var.content : "NO CONTENT PROVIDED"}
   EOT
 }
 
 resource "local_file" "txt2" {
-  filename = "${path.module}/${terraform.workspace}-file2.txt"
+  filename = "${path.module}/file2.txt"
   content  = <<EOT
     %{ if var.content != "" }${var.content}%{ else }NO CONTENT PROVIDED!%{ endif }
   EOT
 }
 
 resource "local_file" "txt3" {
-  filename = "${path.cwd}/${terraform.workspace}-file3.txt"
+  filename = "${path.cwd}/file3.txt"
   content  = <<EOT
     %{ if var.content != "" }${var.content}%{ else }NO CONTENT PROVIDED!%{ endif }
   EOT

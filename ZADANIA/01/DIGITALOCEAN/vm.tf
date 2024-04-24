@@ -6,7 +6,7 @@ resource "digitalocean_droplet" "main" { # <- unikatowy adres zasobu.
     image  = each.value.image
     name   = "${each.value.name}-${each.value.id}" # atrybut nazwa maszyny wirtualnej.
     region = each.value.region
-    size   = contains(local.allowed_instance_types, var.size_vm) ? var.size_vm : "s-1vcpu-1gb"
+    size   = contains(local.allowed_instance_types, var.size_vm) ? var.size_vm : "s-2vcpu-2gb"
     tags = each.value.tags
     vpc_uuid = digitalocean_vpc.main.id
     ssh_keys = [digitalocean_ssh_key.main.id]
@@ -88,3 +88,11 @@ resource "local_file" "key" {
 #output "my_extarnala_ip" {
 #  value = data.digitalocean_droplet.exeternal.ipv4_address
 #}
+
+resource "digitalocean_droplet" "test34" {
+    count = terraform.workspace == "default" ? 1 : 0 
+    name = "test34"
+    image = "ubuntu-20-04-x64"
+    region = "fra1"
+    size = "s-1vcpu-1gb"
+}
