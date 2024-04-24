@@ -1,13 +1,3 @@
-locals {
-  allowed_instance_types = [
-    "s-1vcpu-1gb",
-    "s-1vcpu-2gb",
-    "s-2vcpu-2gb",
-    "s-4vcpu-4gb",
-    "s-2vcpu-4gb"
-  ]
-}
-
 variable "do_token" {
   description = "value of DigitalOcean API token"
   type = string
@@ -22,13 +12,12 @@ variable "name_ssh_key" {
 variable "name_firewall" {
   description = "name of the firewall"
   type = string
-  default = "tf-piotrkoska-temp-firewall"
+  default = "tf-piotrkoska1999-temp-firewall"
 }
 
 variable "name_project" {
   description = "name of the project"
   type = string
-  sensitive = true
   default = "tf-piotrkoska-temp-project"
 }
 

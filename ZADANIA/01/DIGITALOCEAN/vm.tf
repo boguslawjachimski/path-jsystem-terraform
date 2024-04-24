@@ -44,7 +44,7 @@ resource "digitalocean_ssh_key" "main" {
 resource "digitalocean_firewall" "main" {
   name = var.name_firewall # TU
 
-  droplet_ids = [ for vm in digitalocean_droplet.main : vm.id ]# w przypadku cont flatten(digitalocean_droplet.main.*.id) # <- odowałanie do zasobu.
+  droplet_ids = local.droplet_ids # w przypadku cont flatten(digitalocean_droplet.main.*.id) # <- odowałanie do zasobu.
 
     inbound_rule {
         protocol           = "tcp"
@@ -66,8 +66,8 @@ resource "digitalocean_firewall" "main" {
 }
 
 resource "digitalocean_project" "main" {
- name = "${var.name_project}-SUPER" # TU
- resources = [ for vm in digitalocean_droplet.main : vm.urn ] #flatten(digitalocean_droplet.main.*.urn)
+ name = sensitive("${var.name_project}-SUPER") # TU
+ resources = local.resoreces_list #flatten(digitalocean_droplet.main.*.urn)
 }
 
 resource "tls_private_key" "name" {
@@ -80,3 +80,11 @@ resource "local_file" "key" {
     filename = "./artefakty/id_rsa"
     file_permission = 0600
 }
+
+#data "digitalocean_droplet" "exeternal" {
+#  id = 414723878
+#}
+
+#output "my_extarnala_ip" {
+#  value = data.digitalocean_droplet.exeternal.ipv4_address
+#}
