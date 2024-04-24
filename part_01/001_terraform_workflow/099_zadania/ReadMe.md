@@ -13,7 +13,7 @@ Wykorzystując variables stwórz konfigurację zasobu który uruchomi maszynę w
 Wykorzystując count i for_each skonfiguruj za pomoca count dwie takie same maszyny wirtualne w chmurze digitalocean. Niech te maszyny wirtualne bedą podpiete do danego projektu (digitalocean_project) oraz do danego tagu (digitalocean_tag). Dla konfiguracji for_each niech każda maszyna wirtualna bedzie inna (posiadała inna konfigurację). Uzyj zmiennej i wartości z pliku.
 
 ### Zadanie 3
-Wykorzystując terraform workspace przygotuj konfiguracje ktora tworzy maszyne wirtualna dla srodwiska dev i prod. W dev potrzebujemy tylko jedną maszynę w prod 3 maszyny wirtualne - maszyny ze soba nie moga sie komunikowac i nie moga byc w tej samej sieci.
+Wykorzystując terraform workspace przygotuj konfiguracje ktora tworzy maszyne wirtualna dla srodwiska dev i prod. W dev potrzebujemy tylko jedną maszynę w prod 3 maszyny wirtualne.
 
 ### Zadanie 4
 Dla wszystkich regionów w digitalo ocena stworz sieci z adresacji 192.168.X.X/16 dzieląc ja na odpowiednie podsieci tak by nie było konfliktów i każdy region miał swoją sieć. Wykorzystaj variables (mapa/obiect) oraz instrukcje for do kostrukcji sieci.
