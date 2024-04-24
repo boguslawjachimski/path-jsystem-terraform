@@ -10,6 +10,7 @@ terraform {
     }
   }
   backend "pg" {
+    conn_str = "postgresql://postgres:terraform@localhost:5432/terraform?sslmode=disable"
   }
   required_version = ">= 1.6.0"
 }

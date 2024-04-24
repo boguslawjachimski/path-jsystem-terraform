@@ -1,0 +1,330 @@
+{
+  "version": 4,
+  "terraform_version": "1.7.5",
+  "serial": 9,
+  "lineage": "1388dff4-7668-a223-c097-b8b98a7adbb0",
+  "outputs": {
+    "private_key": {
+      "value": "-----BEGIN RSA PRIVATE KEY-----\nMIIJJwIBAAKCAgEAlUgGj0KlY60JxwnKwLQ47RX+YjFVa4+WAKmLNqKb4EAOfv8u\nQz/q7Yf5EiwaObpwQIb7LCxpIzJb3921Aj7gDpKUbfGX7kz+XdQfcBK/xbfXSsX4\nhknYXRz+naBrIgrKdyQIGj8PbDsw+7pc8V2Dibe6Ar06p/N2VjL1S7lNcRC4QpDG\n4O16wJP149/ih5QSXxLxDiY8ZnJTBodrzAmkxAph0vMXna82kqDoCCML8zPHRV8O\naRem5/wDD1acA9WYdAcOeUlgL9desJR2CytrCuPKCz4hLLV7TEshMllE3Fn78eCc\nZln7yPK52HTjhq20MomoZ4jRwdW/8WcmnzxzL6qEfk7HHlZVZ7F/D9yihjJHvBZd\nY26ii/xYfRK6i27yuI+DJV7vTkeRDfQ60qSs0bd1daXuUOFsvxbPEQ3QvuyxCUqH\n0C5/HeBLDQqqnVEv44Lq5p3t4GDoPA7yE8oq2UgdqgxG+CPG18ML5buM7ghvDBk6\nzwZ2tkhXW2xDOOvxkXHVEXMHxKrVA9QkuX4pOGITWMIrgt/aDHuW0oV9LcEFz9z5\nzETc1j66cam3UJw1Za94ktwmTAxty76I5nPlZIOowfPviusGRKuQr5ELRMmnYhhx\ngrVuE27Kmaqwuu6dmeU/isXpKZI/kLfcC9UsZAwCMmWJ1W1a/wvom5Y8EskCAwEA\nAQKCAgBe69V/8pjHsJevAAL0VaR83KdMOKJgKoTvFt92dh83kIOnLQt1p4byUquF\napWib3JBFZNQm0yfHL5estMOAnzlxz6qShyZYku7zc3PrZxTVHqJCSjl+r6hNnaQ\nNBjrJIFpEHg2eDKOV3TmG7JNp3CkeTbF1x0c/ioY1X40EDe11TPU38oV6+tJ2MtZ\nglrAat7jpV+x544wdjFkzWc17kvee9uIDxrNIURKKBZiViabFil3auH24Rs4F366\nmg/KQF8YKASECqwmv4NuNHh60bjWy9EFJRRjIWKtOHh7U1f95RnWy0OnsT/wnqad\nhHXIhVs3Z2C1tMHrxsat8TEVv5JdnCVSY79S67O2QVhunBFFdq4T9BVWnpxEuUbG\ngMXGmmtSHcP9AQhf/kZ0zpo25IA9/6MZn0Dw/zz07ROQRQGcOkFTHdx1rctGtAMs\nj006Ooh5JY7HFVHkvs5N3e6ihlsGk6lRdftRkXOZuRfcxS+SRmamwkeCTJwIso2R\nkZVIicYeYmwaQVSQUjBOE4VF68u7HvSNVFp0REodtCiAWvodlJ/crEhHMH2fp5gf\nMoYGC8sC5xi8XcI40Ie35/3U88m3ePckuQEIsUTvcdL4EPtBuSZzc5R99Jcxjwo4\neGz0skjeUiMHf4DnKfURKXymVQQg7SnYXHP7EGwDKhiYVObboQKCAQEAwMjPdwV3\nxB4fVDBE3h8q4a2xJSVyeHFeSGqm08/AXDlLCK/cT7hluqAcKMsLWKYEJtSUHwtk\nrLu4Hhm+uiF3yDT8bbd30WZ2I7kl7jiXvA7BgGlnztH4JBVQg+UI2QLYdeCGV/T/\n8vHoTXJo37Od+AtjLPvG4VgqnmyLi57PltWQf2VKT6T0gEBN7Mhw1dY40jvGQmAK\nOkPlPe1ieuglGOR7X6/oaY9V5q6xICApNP5Ee7L+yr3pKaOo+c0RsxlQO0TpgrWF\nEXBD3gAthJm2qQETgS9wePVTfoseige3+qN/p61Ifn6QsBEihWYrJCoEwZDfKHVk\na187erjATcdZVwKCAQEAxjtfXhw8ATIDFkzgZOJlJPBG/CuKOQ/JwWwxHnRnswab\nnmC1sJNxhybKDcoTFmn2s14iI5ipdwBrzld4NvjXaRtlk1f3MFGWZH1CEIqJPtAe\nPNeeiC+NgqQnYGn5dvIoif7KjvCp6+XSb0ABqyr/CQMB+BnZevyzYdTE+O1hOq1g\nMCX7P5pWcKipftsrT5smncCYSvbpis/jIrEgNRP5SCoR67BJ1EtjHov7DcKk9ZV/\nWjsD7tFeyjalmJ1hJwdHn6HVGXdYpXT5C6t6Nc3I+h5K5HdiiJ2raArAKTo0pN4J\nXXVme9o3HXloW49Jgk5EDl6dp9jIESBB1YaI4YzA3wKCAQAdB+BeDv+7E8Ip/l7Q\niCb/9xT/AAWd54yIIS9gJB/Wg3YuJ7Vod98x3FyBNBpQTie/5TEs/504ecg/GCdl\nhhawmnIM35z2dpSByqbQmcsXsa0n9jeAqJPSczc9tWbArzIDhj0Uz7sfTZhq2Ti7\nvyOhr61On9eSJaG9W6Ej9FVUZHKvDITFO5TqH0TczE5ZlTnXRtMTOb0wivrheXbk\nBUNY3UdK4IWCJ+iKpXHc4Zry9PtBGXJO+4w6DgArJdtteflgA3+ahFU2jA5cRvCT\n0EX2a0gRoyAvxtm865w8su7cmnRlvq11BwAo01u8dOc4Oe+fan6AbDUkCiI918Z1\nr/hfAoIBAE94A951kTSleQlanmazP/sT/FEhn1MK2kYZeoOMBPqHPqG6gXwdT9jv\nmvb2OLq2ljkIFsWQcPeNCqr48++NyMWRPyJXlHghbRoyAOcisqykwEqB4kMUVTW3\nWzXSpjiiEdBofYnaPzSbuMXysfiNzxosw4BT1JTyc3NX2fM1LtJYKQSEZXn1BIw7\ngV+iu3U5bLy3NhZvb+a/On5w5cmBjWD5xJ9o1+AsrLrVQTsd+gWd/iUNHaGC++4z\nBCXvicAcsgDz3rtL1hTWlPSxtNeW/OgQdtOqbKz6EHowPSMJ+4rQnI6D/ybNr2S4\nhDaYdc6wU6YzFh7w0BvVg673NS6+v58CggEAUg/t8v+xITewsuCPSaGdVxbNLMUH\nUkiRAmPASMa2W0CYaocOj+NNcuSftwRYGjoXJzo202tzQmKDrcM7EOmFlHq34F3n\nscKEPjNz7p0ACVZNfYdNUAyBrjg29mLzpjKOrm5c95yIwx+xUugrdtqUMT9/4Hih\nccP92MDc14e3xpdDLu2LavrWxDsnw8I0QjNTlNDiC8VWg5dYY7QhiZJBth+mIpQs\n7EzSTGXgz4UOXD6yHo/oxDj5QlFktf/yBDW0Dq0oZNc8H3QFDx9fRiSFieN5xWSm\ngqnU47tKI1j8+cIW3fJwHBpPMTc34DjobWB6oQVxB8y2AJetkGCQxxVybw==\n-----END RSA PRIVATE KEY-----\n",
+      "type": "string",
+      "sensitive": true
+    },
+    "pubic_ip": {
+      "value": [
+        "159.223.23.111"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string"
+        ]
+      ]
+    }
+  },
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "digitalocean_droplet",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "index_key": "vm1",
+          "schema_version": 1,
+          "attributes": {
+            "backups": false,
+            "created_at": "2024-04-24T13:54:44Z",
+            "disk": 60,
+            "droplet_agent": null,
+            "graceful_shutdown": false,
+            "id": "414767519",
+            "image": "ubuntu-20-04-x64",
+            "ipv4_address": "159.223.23.111",
+            "ipv4_address_private": "10.113.113.2",
+            "ipv6": false,
+            "ipv6_address": "",
+            "locked": false,
+            "memory": 2048,
+            "monitoring": false,
+            "name": "PIOTRKOSKA-TEST-1-vm1",
+            "price_hourly": 0.02679,
+            "price_monthly": 18,
+            "private_networking": true,
+            "region": "fra1",
+            "resize_disk": true,
+            "size": "s-2vcpu-2gb",
+            "ssh_keys": [
+              "41768604"
+            ],
+            "status": "active",
+            "tags": [
+              "development",
+              "kos",
+              "old",
+              "pio",
+              "stf"
+            ],
+            "timeouts": null,
+            "urn": "do:droplet:414767519",
+            "user_data": null,
+            "vcpus": 2,
+            "volume_ids": [],
+            "vpc_uuid": "05fabf58-0ea8-49f1-b354-3403949c1de4"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjYwMDAwMDAwMDAwLCJ1cGRhdGUiOjM2MDAwMDAwMDAwMDB9LCJzY2hlbWFfdmVyc2lvbiI6IjEifQ==",
+          "dependencies": [
+            "digitalocean_ssh_key.main",
+            "digitalocean_vpc.main",
+            "local_file.key",
+            "tls_private_key.name"
+          ],
+          "create_before_destroy": true
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "digitalocean_firewall",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2024-04-24T13:55:26Z",
+            "droplet_ids": [
+              414767519
+            ],
+            "id": "6baf2147-d6a8-4095-830e-0c2fdf244f75",
+            "inbound_rule": [
+              {
+                "port_range": "22",
+                "protocol": "tcp",
+                "source_addresses": [
+                  "0.0.0.0/0"
+                ],
+                "source_droplet_ids": [],
+                "source_kubernetes_ids": [],
+                "source_load_balancer_uids": [],
+                "source_tags": []
+              },
+              {
+                "port_range": "80",
+                "protocol": "tcp",
+                "source_addresses": [
+                  "0.0.0.0/0"
+                ],
+                "source_droplet_ids": [],
+                "source_kubernetes_ids": [],
+                "source_load_balancer_uids": [],
+                "source_tags": []
+              }
+            ],
+            "name": "tf-piotrkoska1999-temp-firewall",
+            "outbound_rule": [
+              {
+                "destination_addresses": [
+                  "0.0.0.0/0"
+                ],
+                "destination_droplet_ids": [],
+                "destination_kubernetes_ids": [],
+                "destination_load_balancer_uids": [],
+                "destination_tags": [],
+                "port_range": "1-65535",
+                "protocol": "tcp"
+              },
+              {
+                "destination_addresses": [
+                  "0.0.0.0/0"
+                ],
+                "destination_droplet_ids": [],
+                "destination_kubernetes_ids": [],
+                "destination_load_balancer_uids": [],
+                "destination_tags": [],
+                "port_range": "1-65535",
+                "protocol": "udp"
+              }
+            ],
+            "pending_changes": [
+              {
+                "droplet_id": 414767519,
+                "removing": false,
+                "status": "waiting"
+              }
+            ],
+            "status": "waiting",
+            "tags": null
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "digitalocean_droplet.main",
+            "digitalocean_ssh_key.main",
+            "digitalocean_vpc.main",
+            "local_file.key",
+            "tls_private_key.name"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "digitalocean_project",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2024-04-24T13:55:25Z",
+            "description": "",
+            "environment": "",
+            "id": "75a57475-11d6-4628-8626-2a06075a58d9",
+            "is_default": false,
+            "name": "tf-piotrkoska-temp-project-SUPER",
+            "owner_id": 14150917,
+            "owner_uuid": "8a701089-2cac-4d61-ba6d-b0f7053c6f70",
+            "purpose": "Web Application",
+            "resources": [
+              "do:droplet:414767519"
+            ],
+            "timeouts": null,
+            "updated_at": "2024-04-24T13:55:25Z"
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "name"
+              }
+            ]
+          ],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxODAwMDAwMDAwMDB9fQ==",
+          "dependencies": [
+            "digitalocean_droplet.main",
+            "digitalocean_ssh_key.main",
+            "digitalocean_vpc.main",
+            "local_file.key",
+            "tls_private_key.name"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "digitalocean_ssh_key",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "fingerprint": "47:ba:14:e1:73:cb:84:c8:f5:c0:5c:de:56:d4:90:28",
+            "id": "41768604",
+            "name": "tf-piotrkoska-temp-ssh-key",
+            "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCVSAaPQqVjrQnHCcrAtDjtFf5iMVVrj5YAqYs2opvgQA5+/y5DP+rth/kSLBo5unBAhvssLGkjMlvf3bUCPuAOkpRt8ZfuTP5d1B9wEr/Ft9dKxfiGSdhdHP6doGsiCsp3JAgaPw9sOzD7ulzxXYOJt7oCvTqn83ZWMvVLuU1xELhCkMbg7XrAk/Xj3+KHlBJfEvEOJjxmclMGh2vMCaTECmHS8xedrzaSoOgIIwvzM8dFXw5pF6bn/AMPVpwD1Zh0Bw55SWAv116wlHYLK2sK48oLPiEstXtMSyEyWUTcWfvx4JxmWfvI8rnYdOOGrbQyiahniNHB1b/xZyafPHMvqoR+TsceVlVnsX8P3KKGMke8Fl1jbqKL/Fh9ErqLbvK4j4MlXu9OR5EN9DrSpKzRt3V1pe5Q4Wy/Fs8RDdC+7LEJSofQLn8d4EsNCqqdUS/jgurmne3gYOg8DvITyirZSB2qDEb4I8bXwwvlu4zuCG8MGTrPBna2SFdbbEM46/GRcdURcwfEqtUD1CS5fik4YhNYwiuC39oMe5bShX0twQXP3PnMRNzWPrpxqbdQnDVlr3iS3CZMDG3Lvojmc+Vkg6jB8++K6wZEq5CvkQtEyadiGHGCtW4TbsqZqrC67p2Z5T+Kxekpkj+Qt9wL1SxkDAIyZYnVbVr/C+ibljwSyQ==\n"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "tls_private_key.name"
+          ],
+          "create_before_destroy": true
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "digitalocean_vpc",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/digitalocean/digitalocean\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "created_at": "2024-04-24 13:54:43 +0000 UTC",
+            "default": false,
+            "description": "",
+            "id": "05fabf58-0ea8-49f1-b354-3403949c1de4",
+            "ip_range": "10.113.113.0/24",
+            "name": "tf-piotrkoskaxxxc-temp-vpc",
+            "region": "fra1",
+            "timeouts": null,
+            "urn": "do:vpc:05fabf58-0ea8-49f1-b354-3403949c1de4"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxMjAwMDAwMDAwMDB9fQ==",
+          "create_before_destroy": true
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "local_file",
+      "name": "key",
+      "provider": "provider[\"registry.terraform.io/hashicorp/local\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "content": "-----BEGIN RSA PRIVATE KEY-----\n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\n-----END RSA PRIVATE KEY-----\n",
+            "content_base64": null,
+            "content_base64sha256": "91lRWAMQEvNalWgCbgAWIxpmc1unOz2fvPyrY9fNoVo=",
+            "content_base64sha512": "SbAOz87LqkZTqA4/Dw2kBHTiGl2c++7M2T1pWfUaZq4BB50rKBeOJrgskmkEVf9lmUHz2RsdS9dVGfC16cvLjw==",
+            "content_md5": "67fa8621be49a6b338e5c58fdc88b4df",
+            "content_sha1": "d0659c596c9b6b2fedd242234191b61fc44bc219",
+            "content_sha256": "f7595158031012f35a9568026e0016231a66735ba73b3d9fbcfcab63d7cda15a",
+            "content_sha512": "49b00ecfcecbaa4653a80e3f0f0da40474e21a5d9cfbeeccd93d6959f51a66ae01079d2b28178e26b82c92690455ff659941f3d91b1d4bd75519f0b5e9cbcb8f",
+            "directory_permission": "0777",
+            "file_permission": "600",
+            "filename": "./artefakty/id_rsa",
+            "id": "d0659c596c9b6b2fedd242234191b61fc44bc219",
+            "sensitive_content": null,
+            "source": null
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "content"
+              }
+            ]
+          ],
+          "dependencies": [
+            "tls_private_key.name"
+          ],
+          "create_before_destroy": true
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "tls_private_key",
+      "name": "name",
+      "provider": "provider[\"registry.terraform.io/hashicorp/tls\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "algorithm": "RSA",
+            "ecdsa_curve": "P224",
+            "id": "3dfbe10ec8f7bba7d7082b0688d38ceb1971610f",
+            "private_key_openssh": "-----BEGIN OPENSSH PRIVATE KEY-----\n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\n-----END OPENSSH PRIVATE KEY-----\n",
+            "private_key_pem": "-----BEGIN RSA PRIVATE KEY-----\n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\n-----END RSA PRIVATE KEY-----\n",
+            "private_key_pem_pkcs8": "-----BEGIN PRIVATE KEY-----\n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\nOOhtYHqhBXEHzLYAl62QYJDHFXJv\n-----END PRIVATE KEY-----\n",
+            "public_key_fingerprint_md5": "47:ba:14:e1:73:cb:84:c8:f5:c0:5c:de:56:d4:90:28",
+            "public_key_fingerprint_sha256": "SHA256:HAMRgBm8qNkiCTTdxVfkXch+2oftFyvaf/y/OU4baVA",
+            "public_key_openssh": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCVSAaPQqVjrQnHCcrAtDjtFf5iMVVrj5YAqYs2opvgQA5+/y5DP+rth/kSLBo5unBAhvssLGkjMlvf3bUCPuAOkpRt8ZfuTP5d1B9wEr/Ft9dKxfiGSdhdHP6doGsiCsp3JAgaPw9sOzD7ulzxXYOJt7oCvTqn83ZWMvVLuU1xELhCkMbg7XrAk/Xj3+KHlBJfEvEOJjxmclMGh2vMCaTECmHS8xedrzaSoOgIIwvzM8dFXw5pF6bn/AMPVpwD1Zh0Bw55SWAv116wlHYLK2sK48oLPiEstXtMSyEyWUTcWfvx4JxmWfvI8rnYdOOGrbQyiahniNHB1b/xZyafPHMvqoR+TsceVlVnsX8P3KKGMke8Fl1jbqKL/Fh9ErqLbvK4j4MlXu9OR5EN9DrSpKzRt3V1pe5Q4Wy/Fs8RDdC+7LEJSofQLn8d4EsNCqqdUS/jgurmne3gYOg8DvITyirZSB2qDEb4I8bXwwvlu4zuCG8MGTrPBna2SFdbbEM46/GRcdURcwfEqtUD1CS5fik4YhNYwiuC39oMe5bShX0twQXP3PnMRNzWPrpxqbdQnDVlr3iS3CZMDG3Lvojmc+Vkg6jB8++K6wZEq5CvkQtEyadiGHGCtW4TbsqZqrC67p2Z5T+Kxekpkj+Qt9wL1SxkDAIyZYnVbVr/C+ibljwSyQ==\n",
+            "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAlUgGj0KlY60JxwnKwLQ4\n7RX+YjFVa4+WAKmLNqKb4EAOfv8uQz/q7Yf5EiwaObpwQIb7LCxpIzJb3921Aj7g\nDpKUbfGX7kz+XdQfcBK/xbfXSsX4hknYXRz+naBrIgrKdyQIGj8PbDsw+7pc8V2D\nibe6Ar06p/N2VjL1S7lNcRC4QpDG4O16wJP149/ih5QSXxLxDiY8ZnJTBodrzAmk\nxAph0vMXna82kqDoCCML8zPHRV8OaRem5/wDD1acA9WYdAcOeUlgL9desJR2Cytr\nCuPKCz4hLLV7TEshMllE3Fn78eCcZln7yPK52HTjhq20MomoZ4jRwdW/8Wcmnzxz\nL6qEfk7HHlZVZ7F/D9yihjJHvBZdY26ii/xYfRK6i27yuI+DJV7vTkeRDfQ60qSs\n0bd1daXuUOFsvxbPEQ3QvuyxCUqH0C5/HeBLDQqqnVEv44Lq5p3t4GDoPA7yE8oq\n2UgdqgxG+CPG18ML5buM7ghvDBk6zwZ2tkhXW2xDOOvxkXHVEXMHxKrVA9QkuX4p\nOGITWMIrgt/aDHuW0oV9LcEFz9z5zETc1j66cam3UJw1Za94ktwmTAxty76I5nPl\nZIOowfPviusGRKuQr5ELRMmnYhhxgrVuE27Kmaqwuu6dmeU/isXpKZI/kLfcC9Us\nZAwCMmWJ1W1a/wvom5Y8EskCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+            "rsa_bits": 4096
+          },
+          "sensitive_attributes": [],
+          "create_before_destroy": true
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
+
