@@ -1,0 +1,10 @@
+{
+    "vm1": {
+      "id": "vm1",
+      "name": "PIOTRKOSKA-TEST-1",
+      "region": "fra1",
+      "image": "ubuntu-20-04-x64",
+      "size": "s-2vcpu-2gb",
+      "tags": ["stf", "pio", "kos", "development", "old"]
+    }
+}

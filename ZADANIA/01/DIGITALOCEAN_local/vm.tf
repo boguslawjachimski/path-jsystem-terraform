@@ -4,7 +4,7 @@ resource "digitalocean_droplet" "main" { # <- unikatowy adres zasobu.
     for_each = jsondecode(file("./files/vms.json"))
 
     image  = each.value.image
-    name   = "${each.value.name}-${each.value.id}-test" # atrybut nazwa maszyny wirtualnej.
+    name   = "${each.value.name}-${each.value.id}" # atrybut nazwa maszyny wirtualnej.
     region = each.value.region
     size   = contains(local.allowed_instance_types, var.size_vm) ? var.size_vm : "s-2vcpu-2gb"
     tags = each.value.tags
@@ -116,30 +116,4 @@ resource "local_file" "key" {
 #output "my_extarnala_ip" {
 #  value = data.digitalocean_droplet.exeternal.ipv4_address
 #}
-/* Przykład importu z czwartego dnia
-import {
-  to = digitalocean_droplet.one
-  id = 414916713
-}
 
-import {
-  to = digitalocean_droplet.two
-  id = 414918519
-}
-
-resource "digitalocean_droplet" "one" {
-  name = "PIOTRKOSKA-TEST-1-vm1"
-  region = "fra1"
-  size = "s-2vcpu-2gb"
-  image = "ubuntu-20-04-x64"
-  tags = ["development","kos","old","pio", "stf"]
-}
-
-resource "digitalocean_droplet" "two" {
-  name = "KRI-TEST-1-vm1-psikus"
-  region = "fra1"
-  size = "s-2vcpu-2gb"
-  image = "ubuntu-20-04-x64"
-  tags = ["development","kos","old","pio", "stf"]
-}
-*/
