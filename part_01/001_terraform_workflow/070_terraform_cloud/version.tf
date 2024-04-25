@@ -6,7 +6,7 @@ terraform {
         }
     }
     cloud {
-      organization = "Szkolenia"
+      organization = "testpiotrkoska"
 
       workspaces {
         name = "test2"
