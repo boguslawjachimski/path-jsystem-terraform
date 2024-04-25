@@ -47,3 +47,12 @@ Now, command terraform11 invokes version 0.11 and terraform12 invokes versio
 $ terraform11
 $ terraform12
 ```
+
+
+### OpenTofu
+
+Dodatkowa informacj o opentofu - 
+
+https://www.youtube.com/channel/UCgIzfj9QuWL9HHXIXq2A0Ig
+
+szyfrowany stan https://www.youtube.com/watch?v=rR4IbhlRSkI
