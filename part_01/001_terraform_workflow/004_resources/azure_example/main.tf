@@ -47,7 +47,7 @@ resource "azurerm_public_ip" "stf_public_ip" {
 
 # VM
 resource "azurerm_virtual_machine" "main" {
-  name                  = "stf-example-vm"
+  name                  = "stf-test-vm"
   location              = azurerm_resource_group.sft.location
   resource_group_name   = azurerm_resource_group.sft.name
   network_interface_ids = [azurerm_network_interface.stf_nic_vm.id]
