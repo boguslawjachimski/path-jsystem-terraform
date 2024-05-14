@@ -7,7 +7,7 @@ resource "digitalocean_vpc" "main" {
 
 resource "digitalocean_droplet" "main" {
   name   = "bjachimski"
-  image  = "ubuntu-20-04-x86"
+  image  = "ubuntu-20-04-x64"
   region = "fra1"
   size   = "s-1vcpu-1gb"
   #vpc_uuid = 
