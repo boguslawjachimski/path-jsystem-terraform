@@ -4,6 +4,6 @@ variable "do_token" {
 }
 
 variable "number" {
-  type = number
+  type    = number
   default = 2
 }
