@@ -4,5 +4,9 @@ terraform {
     digitalocean = {
       source = "digitalocean/digitalocean"
     }
+
+
+
+
   }
 }
