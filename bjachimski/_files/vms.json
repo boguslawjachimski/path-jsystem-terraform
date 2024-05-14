@@ -1,0 +1,18 @@
+{
+    "vm1": {
+      "id": "vm001",
+      "name": "stf-bjachimski-fra1-droplet",
+      "region": "fra1",
+      "image": "ubuntu-20-04-x64",
+      "size": "s-1vcpu-1gb",
+      "tags": ["stf", "bjachimski", "development"]
+    },
+    "vm2": {
+      "id": "vm002",
+      "name": "stf-bjachimski-fra1-droplet",
+      "region": "fra1",
+      "image": "ubuntu-22-04-x64",
+      "size": "s-2vcpu-2gb",
+      "tags": ["stf", "bjachimski", "development"]
+    }
+}

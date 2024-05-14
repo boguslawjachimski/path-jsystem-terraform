@@ -1,18 +1,33 @@
 # VPC
 resource "digitalocean_vpc" "main" {
+  #count = var.number
   name     = "bjachimski"
+  #name     = "bjachimski${count.index}"
   region   = "fra1"
+  #ip_range = "10.113.${count.index+100}.0/24"
   ip_range = "10.113.100.0/24"
+  depends_on = [ local_file.main, digitalocean_ssh_key.name ]
 }
 
 # Virtual machine
 resource "digitalocean_droplet" "main" {
-  name     = "bjachimski-zad01"
-  image    = "ubuntu-20-04-x64"
-  region   = "fra1"
-  size     = "s-1vcpu-1gb"
+
+  for_each = jsondecode(file("./_files/vms.json"))
+
+  #count    = 2
+  name     = "${each.value.id}-${each.value.name}"
+  image    = each.value.image
+  region   = each.value.region
+  size     = each.value.size
+  #vpc_uuid = digitalocean_vpc.main[count.index].id
   vpc_uuid = digitalocean_vpc.main.id
   ssh_keys = [digitalocean_ssh_key.name.id]
+
+  timeouts {
+    create = "50s" # 50 sekund dla create
+    update = "100s" # 100 sekund dla update
+    delete = "40s" # 30 sekund dla delete
+  }
 }
 
 resource "digitalocean_ssh_key" "name" {
@@ -24,8 +39,8 @@ resource "digitalocean_ssh_key" "name" {
 resource "digitalocean_firewall" "name" {
   name = "bjachimski-firewall"
 
-  droplet_ids = [digitalocean_droplet.main.id]
-
+  #droplet_ids = flatten(digitalocean_droplet.main.*.id)
+  droplet_ids = [for VM in digitalocean_droplet.main : VM.id]
   inbound_rule {
     protocol         = "tcp"
     port_range       = "22"
