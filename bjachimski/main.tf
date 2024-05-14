@@ -20,9 +20,9 @@ resource "digitalocean_droplet" "main" {
   region = each.value.region
   size   = each.value.size
   #vpc_uuid = digitalocean_vpc.main[count.index].id
-  vpc_uuid = digitalocean_vpc.main.id
-  ssh_keys = [digitalocean_ssh_key.name.id]
-  tags = each.value.tags
+  vpc_uuid  = digitalocean_vpc.main.id
+  ssh_keys  = [digitalocean_ssh_key.name.id]
+  tags      = each.value.tags
   user_data = file("./_files/nginx.yaml")
 
   timeouts {
@@ -33,25 +33,25 @@ resource "digitalocean_droplet" "main" {
 
   lifecycle {
     create_before_destroy = true
-    prevent_destroy = false
+    prevent_destroy       = false
     #ignore_changes = [ tags,name ]
     #replace_triggered_by = [ digitalocean_vpc.main ]
   }
-  
+
   #provisioner "local-exec" {
   #  command = "echo ${self.urn} > ./${self.urn}.txt;echo ${self.urn} >> ./${self.urn}.txt"
   #}
   provisioner "file" {
-    source = "${path.cwd}/_files/index.html"
+    source      = "${path.cwd}/_files/index.html"
     destination = "/tmp/index.html"
   }
 
   connection {
-      type = "ssh"
-      user = "root"
-      private_key = tls_private_key.main.private_key_openssh
-      host = self.ipv4_address
-    }
+    type        = "ssh"
+    user        = "root"
+    private_key = tls_private_key.main.private_key_openssh
+    host        = self.ipv4_address
+  }
 
 }
 
