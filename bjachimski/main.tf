@@ -1,11 +1,11 @@
 # VPC
 resource "digitalocean_vpc" "main" {
   #count = var.number
-  name = "bjachimski"
+  name = var.vpc_name
   #name     = "bjachimski${count.index}"
-  region = "fra1"
+  region = var.region_name
   #ip_range = "10.113.${count.index+100}.0/24"
-  ip_range   = "10.113.100.0/24"
+  ip_range   = var.ip_range
   depends_on = [local_file.main, digitalocean_ssh_key.name]
 }
 
@@ -56,13 +56,13 @@ resource "digitalocean_droplet" "main" {
 }
 
 resource "digitalocean_ssh_key" "name" {
-  name       = "bjachimski"
+  name       = var.ssh_keyname
   public_key = tls_private_key.main.public_key_openssh
 }
 
 # Firewall
 resource "digitalocean_firewall" "name" {
-  name = "bjachimski-firewall"
+  name = var.firewall_name
 
   #droplet_ids = flatten(digitalocean_droplet.main.*.id)
   droplet_ids = [for VM in digitalocean_droplet.main : VM.id]
@@ -87,4 +87,32 @@ resource "digitalocean_firewall" "name" {
     port_range            = "1-65535"
     destination_addresses = ["0.0.0.0/0"]
   }
+}
+
+locals {
+  ids = [
+    {
+      id = 418951144
+    },
+    {
+      id = 418951145
+    }
+  ]
+}
+
+
+data "digitalocean_droplet" "piotrkoska_droplet" {
+  for_each = {for i in local.ids : i.id => i}
+  id = each.value.id
+    #id = "418951145"
+}
+
+
+output "piotrkoska_droplet_ip" {
+  value = { for d in data.digitalocean_droplet.piotrkoska_droplet : d.name => d.ipv4_address }
+}
+
+
+output "piotrkoska_droplet_id" {
+  value = { for d in data.digitalocean_droplet.piotrkoska_droplet : d.name => d.id }
 }
